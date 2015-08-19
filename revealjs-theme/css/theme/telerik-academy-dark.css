@@ -19,11 +19,11 @@
   font-weight: normal;
 }
 .reveal .slides em {
-  display inline-block
-  font-weight normal
-  font-style italics
-  border 1px solid #add8e6
-  text-align justify  
+  display: inline-block;
+  font-weight: normal;
+  font-style: italics;
+  border: 1px solid #add8e6;
+  text-align: justify;
 }
 .reveal .slides a {
   text-decoration: underline;
