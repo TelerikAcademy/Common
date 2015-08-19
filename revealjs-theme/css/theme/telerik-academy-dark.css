@@ -18,6 +18,11 @@
 .reveal .slides strong {
   font-weight: normal;
 }
+.reveal .slides em {
+  font-weight: normal;
+  font-style: italics;
+  border: 1px solid #add8e6;
+}
 .reveal .slides a {
   text-decoration: underline;
 }
@@ -43,9 +48,9 @@
 }
 .reveal .slides section code {
   color: #daedf2;
+  text-shadow: 3px 3px 3px #000;
 }
-.reveal .slides section pre,
-.reveal .slides section code {
+.reveal .slides section pre code {
   text-shadow: none;
 }
 .reveal .slides section section {
@@ -137,4 +142,13 @@
   font-size: 0.85;
   text-decoration: underline;
   line-height: 10px;
+}
+.reveal .slides .balloon {
+  display: inline-block;
+  position: absolute;
+  padding: 5px 15px;
+  font-size: 25px;
+  border: 2px solid #f5ffe0;
+  border-radius: 15px;
+  background: #9f8471;
 }
