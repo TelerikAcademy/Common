@@ -18,7 +18,7 @@
 .reveal .slides strong {
   font-weight: normal;
 }
-.reveal .slides em {
+.reveal .slides cite {
   display: inline-block;
   font-weight: normal;
   font-style: italics;
