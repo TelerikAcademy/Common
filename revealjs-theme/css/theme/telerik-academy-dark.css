@@ -159,3 +159,8 @@
   border-radius: 15px;
   background: #9f8471;
 }
+.reveal .slides .slide-image {
+  border: none;
+  background: none;
+  position: absolute;
+}
