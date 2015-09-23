@@ -92,6 +92,8 @@ var render = (function() {
         var sections = parseMarkdown(markdown);
         fillSections(sections);
         setupRevealJs();
+      }, error: function(){
+
       }
     });
   }
