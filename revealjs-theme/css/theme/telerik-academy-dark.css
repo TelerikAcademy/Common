@@ -179,14 +179,14 @@
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.reveal .slides .bubble-left: before,
-.reveal .slides .bubble-right: before,
-.reveal .slides .bubble-up: before,
-.reveal .slides .bubble-up-left: before,
-.reveal .slides .bubble-up-right: before,
+.reveal .slides .bubble-left:before,
+.reveal .slides .bubble-right:before,
+.reveal .slides .bubble-up:before,
+.reveal .slides .bubble-up-left:before,
+.reveal .slides .bubble-up-right:before,
 .reveal .slides .bubble-down: before,
-.reveal .slides .bubble-down-left: before,
-.reveal .slides .bubble-down-right: before {
+.reveal .slides .bubble-down-left:before,
+.reveal .slides .bubble-down-right:before {
   content: "";
   position: absolute;
   width: 0;
