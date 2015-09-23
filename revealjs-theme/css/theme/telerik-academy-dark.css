@@ -33,6 +33,10 @@
 .reveal .slides a {
   text-decoration: underline;
 }
+.reveal .slides .table-of-contents a {
+    color: #faf7c8;
+    text-decoration: none;
+}
 .reveal .slides .hljs {
   background: rgba(250,250,250,0.85);
   border-radius: 15px;
