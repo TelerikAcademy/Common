@@ -16,10 +16,10 @@ var render = (function () {
       slides = [],
       slide = '';
     lines.forEach(function (line) {
-      line = line.trim();
-      if (line.indexOf('# ') === 0 ||
-        line.indexOf('#\t') === 0 ||
-        line.indexOf('attr:') >= 0) {
+      var trimmedLine = line.trim();
+      if (trimmedLine.indexOf('# ') === 0 ||
+        trimmedLine.indexOf('#\t') === 0 ||
+        trimmedLine.indexOf('attr:') >= 0) {
         if (slide.trim() !== '') {
           slides.push(slide);
         }
