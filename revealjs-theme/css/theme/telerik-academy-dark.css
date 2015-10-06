@@ -233,3 +233,6 @@
   border-right: 15px solid transparent;
   border-top: 30px solid #f5ffe0;
 }
+.reveal .slides sup {
+  font-size: 0.8em;
+}
