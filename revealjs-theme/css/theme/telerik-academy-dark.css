@@ -33,10 +33,6 @@
 .reveal .slides a {
   text-decoration: underline;
 }
-.reveal .slides .table-of-contents a {
-    color: #ebffd2;
-    text-decoration: none;
-}
 .reveal .slides .hljs {
   background: rgba(250,250,250,0.85);
   border-radius: 15px;
@@ -84,6 +80,10 @@
   color: #faf7c8;
   font-size: 1.3em;
   margin-top: 10px;
+}
+.reveal .slides .table-of-contents a {
+  color: #ebffd2;
+  text-decoration: none;
 }
 .reveal .slides .slide-title {
   background-position: top left, bottom right;
@@ -150,7 +150,7 @@
 }
 .reveal .slides .signature-link {
   color: #739900;
-  font-size: 0.85;
+  font-size: 0.85em;
   text-decoration: underline;
   line-height: 10px;
 }
@@ -232,4 +232,7 @@
   top: 100%;
   border-right: 15px solid transparent;
   border-top: 30px solid #f5ffe0;
+}
+.reveal .slides sup {
+  font-size: 0.8em;
 }
