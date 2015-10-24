@@ -238,6 +238,7 @@
 }
 
 .reveal .slides .box {
-  border: 1px solid #ace;
+  border: 1px solid #8cd;
   padding: 1% 3%;
+  background: rgba(180,220,220,0.15);
 }
