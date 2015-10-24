@@ -236,3 +236,8 @@
 .reveal .slides sup {
   font-size: 0.8em;
 }
+
+.releal .slides .box-shadow {
+  border: 1px solid #ace;
+  padding: 1% 3%;
+}
