@@ -244,7 +244,7 @@
   background: rgba(180,220,220,0.15);
 }
 
-.reveal .slides .demo {
+.reveal .slides .demo a {
   color: #ebffd2;
   text-decoration: none;
 }
