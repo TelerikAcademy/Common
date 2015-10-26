@@ -36,6 +36,10 @@
 *   Single Page applications
     *   Routing, Templates, Bindings
 *   AngularJS
+    *   Controllers
+    *   Routers
+    *   Services
+    *   Directives
 
 #   End-to-end JavaScript Applications
 
