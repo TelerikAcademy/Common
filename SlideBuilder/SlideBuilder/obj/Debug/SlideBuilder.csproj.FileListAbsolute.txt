@@ -1,0 +1,9 @@
+D:\Projects\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.exe.config
+D:\Projects\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.exe
+D:\Projects\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.pdb
+D:\Projects\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.csprojResolveAssemblyReference.cache
+D:\Projects\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.csproj.ResolveComReference.cache
+D:\Projects\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.exe
+D:\Projects\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.pdb
+D:\Projects\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Projects\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.xml
