@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<p:sp xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:nvSpPr>
+    <p:cNvPr id="588804" name="Rectangle 4" />
+    <p:cNvSpPr>
+      <a:spLocks noChangeArrowheads="1" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+    </p:cNvSpPr>
+    <p:nvPr />
+  </p:nvSpPr>
+  <p:spPr bwMode="auto">
+    <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:off x="1079500" y="2860426" />
+      <a:ext cx="6921500" cy="2426305" />
+    </a:xfrm>
+    <a:prstGeom prst="rect" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:avLst />
+    </a:prstGeom>
+    <a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:schemeClr val="accent5">
+        <a:lumMod val="40000" />
+        <a:lumOff val="60000" />
+        <a:alpha val="15000" />
+      </a:schemeClr>
+    </a:solidFill>
+    <a:ln w="12700" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:solidFill>
+        <a:schemeClr val="accent5">
+          <a:lumMod val="60000" />
+          <a:lumOff val="40000" />
+        </a:schemeClr>
+      </a:solidFill>
+    </a:ln>
+  </p:spPr>
+  <p:txBody>
+    <a:bodyPr wrap="square" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:spAutoFit />
+    </a:bodyPr>
+    <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+    <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:pPr eaLnBrk="0" hangingPunct="0">
+        <a:lnSpc>
+          <a:spcPts val="2600" />
+        </a:lnSpc>
+        <a:spcBef>
+          <a:spcPts val="0" />
+        </a:spcBef>
+        <a:buClr>
+          <a:schemeClr val="accent5">
+            <a:lumMod val="40000" />
+            <a:lumOff val="60000" />
+          </a:schemeClr>
+        </a:buClr>
+        <a:buSzPct val="70000" />
+      </a:pPr>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>static decimal</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>F</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>actorial(</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>decimal</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>num</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>)</a:t>
+      </a:r>
+      <a:br>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+      </a:br>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>{</a:t>
+      </a:r>
+      <a:br>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+      </a:br>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>    </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>if (</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>num</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>==</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>0</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>) </a:t>
+      </a:r>
+      <a:endParaRPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+        <a:solidFill>
+          <a:srgbClr val="8CF4F2" />
+        </a:solidFill>
+        <a:effectLst>
+          <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+            <a:srgbClr val="000000">
+              <a:alpha val="43137" />
+            </a:srgbClr>
+          </a:outerShdw>
+        </a:effectLst>
+        <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+        <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+      </a:endParaRPr>
+    </a:p>
+    <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:pPr eaLnBrk="0" hangingPunct="0">
+        <a:lnSpc>
+          <a:spcPts val="2600" />
+        </a:lnSpc>
+        <a:spcBef>
+          <a:spcPts val="0" />
+        </a:spcBef>
+        <a:buClr>
+          <a:schemeClr val="accent5">
+            <a:lumMod val="40000" />
+            <a:lumOff val="60000" />
+          </a:schemeClr>
+        </a:buClr>
+        <a:buSzPct val="70000" />
+      </a:pPr>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>        </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>return 1;</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t />
+      </a:r>
+      <a:br>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+      </a:br>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>    </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>else</a:t>
+      </a:r>
+      <a:endParaRPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+        <a:solidFill>
+          <a:srgbClr val="8CF4F2" />
+        </a:solidFill>
+        <a:effectLst>
+          <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+            <a:srgbClr val="000000">
+              <a:alpha val="43137" />
+            </a:srgbClr>
+          </a:outerShdw>
+        </a:effectLst>
+        <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+        <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+      </a:endParaRPr>
+    </a:p>
+    <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+      <a:pPr eaLnBrk="0" hangingPunct="0">
+        <a:lnSpc>
+          <a:spcPts val="2600" />
+        </a:lnSpc>
+        <a:spcBef>
+          <a:spcPts val="0" />
+        </a:spcBef>
+        <a:buClr>
+          <a:schemeClr val="accent5">
+            <a:lumMod val="40000" />
+            <a:lumOff val="60000" />
+          </a:schemeClr>
+        </a:buClr>
+        <a:buSzPct val="70000" />
+      </a:pPr>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>        </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>return n</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>um</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> * </a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>F</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>actorial(n</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="en-US" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>um</a:t>
+      </a:r>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t> - 1); </a:t>
+      </a:r>
+      <a:br>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+      </a:br>
+      <a:r>
+        <a:rPr lang="bg-BG" sz="1800" b="1" noProof="1" smtClean="0">
+          <a:solidFill>
+            <a:srgbClr val="8CF4F2" />
+          </a:solidFill>
+          <a:effectLst>
+            <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+              <a:srgbClr val="000000">
+                <a:alpha val="43137" />
+              </a:srgbClr>
+            </a:outerShdw>
+          </a:effectLst>
+          <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+          <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+        </a:rPr>
+        <a:t>} </a:t>
+      </a:r>
+      <a:endParaRPr lang="en-US" sz="1800" b="1" noProof="1">
+        <a:solidFill>
+          <a:srgbClr val="8CF4F2" />
+        </a:solidFill>
+        <a:effectLst>
+          <a:outerShdw blurRad="38100" dist="38100" dir="2700000" algn="tl">
+            <a:srgbClr val="000000">
+              <a:alpha val="43137" />
+            </a:srgbClr>
+          </a:outerShdw>
+        </a:effectLst>
+        <a:latin typeface="Consolas" pitchFamily="49" charset="0" />
+        <a:cs typeface="Consolas" pitchFamily="49" charset="0" />
+      </a:endParaRPr>
+    </a:p>
+  </p:txBody>
+</p:sp>
