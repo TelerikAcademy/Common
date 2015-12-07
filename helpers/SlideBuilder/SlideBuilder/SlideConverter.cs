@@ -239,7 +239,7 @@
                 }
                 else
                 {
-                    mdSlide.Texts.AddLast(new MDShape(string.Format("{0}* {1}", new string(' ', mdShape.IndentCount * 2), line)));
+                    mdSlide.Texts.AddLast(new MDShape(string.Format("{0}- {1}", new string(' ', mdShape.IndentCount * 2), line)));
                 }
             }
         }
