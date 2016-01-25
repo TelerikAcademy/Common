@@ -16,3 +16,12 @@ D:\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\SlideBuild
 D:\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.dll
 D:\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.csprojResolveAssemblyReference.cache
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.exe.config
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.csproj.ResolveComReference.cache
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.exe
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.pdb
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.exe
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\SlideBuilder.pdb
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Dropbox\Telerik Academy Common\helpers\SlideBuilder\SlideBuilder\obj\Debug\SlideBuilder.csprojResolveAssemblyReference.cache
