@@ -289,18 +289,23 @@
 
         private static void CheckWrappingShape(Shape shape, MDShape mdText)
         {
-            var bodyWrapp = shape.Descendants<TextBody>().FirstOrDefault()
-                                    .Descendants<DocumentFormat.OpenXml.Drawing.BodyProperties>().FirstOrDefault().Wrap;
-            if (bodyWrapp != null)
+            var bodyProps = shape.Descendants<TextBody>().FirstOrDefault()
+                                    .Descendants<DocumentFormat.OpenXml.Drawing.BodyProperties>().FirstOrDefault();
+            if (bodyProps != null)
             {
-                var presetGeometry = shape.Descendants<DocumentFormat.OpenXml.Drawing.PresetGeometry>().FirstOrDefault();
+                var bodyWrapp = bodyProps.Wrap;
 
-                if (bodyWrapp.Value == DocumentFormat.OpenXml.Drawing.TextWrappingValues.Square &&
-                    presetGeometry != null && presetGeometry.Prefix != null)
+                if (bodyWrapp != null)
                 {
-                    var wrappShape = presetGeometry.Preset.Value;
-                    mdText.IsMultiCode = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.Rectangle;
-                    mdText.IsBalloon = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
+                    var presetGeometry = shape.Descendants<DocumentFormat.OpenXml.Drawing.PresetGeometry>().FirstOrDefault();
+
+                    if (bodyWrapp.Value == DocumentFormat.OpenXml.Drawing.TextWrappingValues.Square &&
+                        presetGeometry != null && presetGeometry.Prefix != null)
+                    {
+                        var wrappShape = presetGeometry.Preset.Value;
+                        mdText.IsMultiCode = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.Rectangle;
+                        mdText.IsBalloon = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
+                    }
                 }
             }
         }
