@@ -161,11 +161,11 @@
 
             var mdSlide = new MDSlide();
             mdSlide.IsTitleSlide = slideNum == 0;
-            mdSlide.HasImage = slidePart.Slide.Descendants<Picture>().Any();
+            // mdSlide.HasImage = slidePart.Slide.Descendants<Picture>().Any();
 
             foreach (var shape in slidePart.Slide.Descendants<Shape>())
             {
-                var mdShape = new MDShape();
+                var mdShape = new MDShapeText();
 
                 CheckSlideType(shape, mdSlide, mdShape);
                 CheckWrappingShape(shape, mdShape);
@@ -178,7 +178,7 @@
 
                 if (mdShape.IsMultiCode && mdShape.AddedCodeOpen)
                 {
-                    mdSlide.Texts.AddLast(new MDShape("```"));
+                    mdSlide.Shapes.AddLast(new MDShapeText("```"));
                     mdShape.IsMultiCode = false;
                     mdShape.AddedCodeOpen = false;
                 }
@@ -187,7 +187,7 @@
             return mdSlide.ToStringArray();
         }
 
-        private static void ParseParagraphText(MDSlide mdSlide, MDShape mdShape, string paragraphText)
+        private static void ParseParagraphText(MDSlide mdSlide, MDShapeText mdShape, string paragraphText)
         {
             if (paragraphText.Length > 0)
             {
@@ -198,7 +198,7 @@
 
                 if (mdShape.IsTitle)
                 {
-                    mdSlide.Texts.AddLast(new MDShape(string.Format("# {0}", line)));
+                    mdSlide.Shapes.AddLast(new MDShapeText(string.Format("# {0}", line)));
                 }
                 else if (mdShape.IsSecTitle)
                 {
@@ -207,44 +207,44 @@
                         mdSlide.IsDemoSlide = true;
                         line = "[Demo]()";
 
-                        var demoTitle = mdSlide.Texts.Last.Value.ToString();
-                        mdSlide.Texts.RemoveLast();
-                        mdSlide.Texts.AddLast(new MDShape(string.Format("<!-- {0} -->", demoTitle)));
+                        var demoTitle = mdSlide.Shapes.Last.Value.ToString();
+                        mdSlide.Shapes.RemoveLast();
+                        mdSlide.Shapes.AddLast(new MDShapeText(string.Format("<!-- {0} -->", demoTitle)));
                     }
 
-                    mdSlide.Texts.AddLast(new MDShape(string.Format("##  {0}", line)));
+                    mdSlide.Shapes.AddLast(new MDShapeText(string.Format("##  {0}", line)));
                 }
                 else if (mdShape.IsMultiCode)
                 {
                     if (!mdShape.AddedCodeOpen)
                     {
-                        mdSlide.Texts.AddLast(new MDShape(""));
-                        mdSlide.Texts.AddLast(new MDShape(string.Format("```{0}", Language)));
-                        mdSlide.Texts.AddLast(new MDShape(line));
+                        mdSlide.Shapes.AddLast(new MDShapeText(""));
+                        mdSlide.Shapes.AddLast(new MDShapeText(string.Format("```{0}", Language)));
+                        mdSlide.Shapes.AddLast(new MDShapeText(line));
                         mdShape.AddedCodeOpen = true;
                     }
                     else
                     {
-                        mdSlide.Texts.AddLast(new MDShape(line));
+                        mdSlide.Shapes.AddLast(new MDShapeText(line));
                     }
                 }
                 else if (mdShape.IsBalloon)
                 {
-                    mdSlide.Texts.AddLast(new MDShape(string.Format(@"<div class=""fragment balloon"" style=""width:250px; top:60%; left:10%"">{0}</div>", line)));
+                    mdSlide.Shapes.AddLast(new MDShapeText(string.Format(@"<div class=""fragment balloon"" style=""width:250px; top:60%; left:10%"">{0}</div>", line)));
                     mdSlide.HasTags = true;
                 }
-                else if (mdSlide.IsTitleSlide)
-                {
-                    mdSlide.Signature.Add(line);
-                }
+                //else if (mdSlide.IsTitleSlide)
+                //{
+                //    mdSlide.Signature.Add(line);
+                //}
                 else
                 {
-                    mdSlide.Texts.AddLast(new MDShape(string.Format("{0}- {1}", new string(' ', mdShape.IndentCount * 2), line)));
+                    mdSlide.Shapes.AddLast(new MDShapeText(string.Format("{0}- {1}", new string(' ', mdShape.IndentCount * 2), line)));
                 }
             }
         }
 
-        private static string ExtractTextFromParagraph(MDShape mdShape, Drawing.Paragraph paragraph)
+        private static string ExtractTextFromParagraph(MDShapeText mdShape, Drawing.Paragraph paragraph)
         {
             StringBuilder paragraphText = new StringBuilder();
             foreach (var run in paragraph.Descendants<Drawing.Run>())
@@ -275,22 +275,22 @@
             return paragraphText.ToString();
         }
 
-        private static void CheckSlideType(Shape shape, MDSlide mdSlide, MDShape mdText)
+        private static void CheckSlideType(Shape shape, MDSlide mdSlide, MDShapeText mdShape)
         {
             var placeholder = shape.Descendants<PlaceholderShape>().FirstOrDefault();
 
             if (placeholder != null && placeholder.Type != null)
             {
-                mdText.IsTitle = placeholder.Type.Value == PlaceholderValues.Title || placeholder.Type.Value == PlaceholderValues.CenteredTitle;
-                mdText.IsSecTitle = placeholder.Type.Value == PlaceholderValues.SubTitle;
-                mdSlide.IsSlideSection |= placeholder.Type.Value == PlaceholderValues.CenteredTitle;
+                mdShape.IsTitle = placeholder.Type.Value == PlaceholderValues.Title || placeholder.Type.Value == PlaceholderValues.CenteredTitle;
+                mdShape.IsSecTitle = placeholder.Type.Value == PlaceholderValues.SubTitle;
+                mdSlide.IsNewSection |= placeholder.Type.Value == PlaceholderValues.CenteredTitle;
             }
         }
 
-        private static void CheckWrappingShape(Shape shape, MDShape mdText)
+        private static void CheckWrappingShape(Shape shape, MDShapeText mdShape)
         {
             var bodyProps = shape.Descendants<TextBody>().FirstOrDefault()
-                                    .Descendants<DocumentFormat.OpenXml.Drawing.BodyProperties>().FirstOrDefault();
+                                    .Descendants<Drawing.BodyProperties>().FirstOrDefault();
             if (bodyProps != null)
             {
                 var bodyWrapp = bodyProps.Wrap;
@@ -303,8 +303,8 @@
                         presetGeometry != null && presetGeometry.Prefix != null)
                     {
                         var wrappShape = presetGeometry.Preset.Value;
-                        mdText.IsMultiCode = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.Rectangle;
-                        mdText.IsBalloon = wrappShape == DocumentFormat.OpenXml.Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
+                        mdShape.IsMultiCode = wrappShape == Drawing.ShapeTypeValues.Rectangle;
+                        mdShape.IsBalloon = wrappShape == Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
                     }
                 }
             }
