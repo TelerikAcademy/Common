@@ -230,8 +230,8 @@
                 }
                 else if (mdShape.IsBalloon)
                 {
-                    mdSlide.Shapes.AddLast(new MDShapeText(string.Format(@"<div class=""fragment balloon"" style=""width:250px; top:60%; left:10%"">{0}</div>", line)));
-                    mdSlide.HasTags = true;
+                    //mdSlide.Shapes.AddLast(new MDShapeText(string.Format(@"<div class=""fragment balloon"" style=""width:250px; top:60%; left:10%"">{0}</div>", line)));
+                    //mdSlide.HasTags = true;
                 }
                 //else if (mdSlide.IsTitleSlide)
                 //{

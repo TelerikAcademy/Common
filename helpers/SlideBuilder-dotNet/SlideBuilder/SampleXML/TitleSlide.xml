@@ -1,0 +1,409 @@
+﻿<p:sld xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="" />
+        <p:cNvGrpSpPr />
+        <p:nvPr />
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0" />
+          <a:ext cx="0" cy="0" />
+          <a:chOff x="0" y="0" />
+          <a:chExt cx="0" cy="0" />
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="1026" name="Picture 2" descr="http://1024d.files.wordpress.com/2011/03/recursion-00.jpg?w=450&amp;h=228" />
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId3">
+            <a:clrChange>
+              <a:clrFrom>
+                <a:srgbClr val="000000" />
+              </a:clrFrom>
+              <a:clrTo>
+                <a:srgbClr val="000000">
+                  <a:alpha val="0" />
+                </a:srgbClr>
+              </a:clrTo>
+            </a:clrChange>
+            <a:extLst>
+              <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" />
+              </a:ext>
+            </a:extLst>
+          </a:blip>
+          <a:srcRect />
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="3962400" y="274467" />
+            <a:ext cx="4597554" cy="2136294" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 25910" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill />
+          <a:extLst>
+            <a:ext uri="{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}">
+              <a14:hiddenFill xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF" />
+                </a:solidFill>
+              </a14:hiddenFill>
+            </a:ext>
+          </a:extLst>
+        </p:spPr>
+      </p:pic>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="19" name="Picture 18">
+            <a:hlinkClick r:id="rId4" />
+          </p:cNvPr>
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId5" cstate="screen">
+            <a:extLst>
+              <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" />
+              </a:ext>
+            </a:extLst>
+          </a:blip>
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4944967" y="4874088" />
+            <a:ext cx="1487756" cy="1418452" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="Title 4" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="ctrTitle" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="2362200" />
+            <a:ext cx="8229600" cy="904202" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Recursion</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Subtitle 6" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="subTitle" idx="1" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="433450" y="3348676" />
+            <a:ext cx="8229600" cy="569120" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" />
+              <a:t>The Power of </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>the Recursive Algorithms</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="13" name="Picture 1" descr="C:\NAKOV\Telerik-Academy-Course-2009\Fundamentals-of-C#-Programming\Trainer\10. Recursion\recursion-title-slide-picture.jpg" />
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId6" cstate="screen" />
+          <a:srcRect />
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm rot="20405521">
+            <a:off x="6573764" y="4713014" />
+            <a:ext cx="2088950" cy="1278933" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 8109" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill />
+        </p:spPr>
+      </p:pic>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="18" name="Picture 3" descr="http://logos.cs.uic.edu/APCS/Notes/Java/Recursion/MirrorInAMirror.jpg" />
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId7" cstate="screen" />
+          <a:srcRect />
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="542694" y="1002597" />
+            <a:ext cx="2971800" cy="1847850" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 7423" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill />
+        </p:spPr>
+      </p:pic>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="17" name="Picture 5" />
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId8">
+            <a:extLst>
+              <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" />
+              </a:ext>
+            </a:extLst>
+          </a:blip>
+          <a:srcRect />
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm rot="414227">
+            <a:off x="1049538" y="3133433" />
+            <a:ext cx="1220604" cy="1331566" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln>
+            <a:noFill />
+          </a:ln>
+          <a:effectLst />
+          <a:extLst>
+            <a:ext uri="{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}">
+              <a14:hiddenFill xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+                <a:solidFill>
+                  <a:schemeClr val="accent1" />
+                </a:solidFill>
+              </a14:hiddenFill>
+            </a:ext>
+            <a:ext uri="{91240B29-F687-4F45-9708-019B960494DF}">
+              <a14:hiddenLine xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" w="9525">
+                <a:solidFill>
+                  <a:schemeClr val="tx1" />
+                </a:solidFill>
+                <a:miter lim="800000" />
+                <a:headEnd />
+                <a:tailEnd />
+              </a14:hiddenLine>
+            </a:ext>
+            <a:ext uri="{AF507438-7753-43E0-B8FC-AC1667EBCBE1}">
+              <a14:hiddenEffects xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+                <a:effectLst>
+                  <a:outerShdw dist="35921" dir="2700000" algn="ctr" rotWithShape="0">
+                    <a:schemeClr val="bg2" />
+                  </a:outerShdw>
+                </a:effectLst>
+              </a14:hiddenEffects>
+            </a:ext>
+          </a:extLst>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="20" name="Text Placeholder 27" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="body" sz="quarter" idx="12" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457199" y="5121649" />
+            <a:ext cx="4621676" cy="461665" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" indent="0" eaLnBrk="1" hangingPunct="1">
+              <a:spcBef>
+                <a:spcPct val="20000" />
+              </a:spcBef>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2400" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="tx2">
+                    <a:lumMod val="50000" />
+                  </a:schemeClr>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Data Structures and Algorithms</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="21" name="Text Placeholder 28" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="body" sz="quarter" idx="10" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457199" y="5496290" />
+            <a:ext cx="3990513" cy="400110" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr eaLnBrk="1" hangingPunct="1">
+              <a:spcBef>
+                <a:spcPct val="20000" />
+              </a:spcBef>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2000" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="tx2">
+                    <a:lumMod val="20000" />
+                    <a:lumOff val="80000" />
+                  </a:schemeClr>
+                </a:solidFill>
+              </a:rPr>
+              <a:t>Telerik Software Academy</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="22" name="Text Placeholder 29" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="body" sz="quarter" idx="11" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457199" y="5801090" />
+            <a:ext cx="3990513" cy="369332" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="319088" indent="-319088" eaLnBrk="1" hangingPunct="1">
+              <a:spcBef>
+                <a:spcPct val="20000" />
+              </a:spcBef>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:hlinkClick r:id="rId9" />
+              </a:rPr>
+              <a:t>http://academy.telerik.com</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" />
+              <a:t> </a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping />
+  </p:clrMapOvr>
+  <p:timing>
+    <p:tnLst>
+      <p:par>
+        <p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot" />
+      </p:par>
+    </p:tnLst>
+  </p:timing>
+</p:sld>

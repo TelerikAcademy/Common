@@ -1,0 +1,263 @@
+﻿<p:sld xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="" />
+        <p:cNvGrpSpPr />
+        <p:nvPr />
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0" />
+          <a:ext cx="0" cy="0" />
+          <a:chOff x="0" y="0" />
+          <a:chExt cx="0" cy="0" />
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="423938" name="Rectangle 2" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noChangeArrowheads="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="title" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr />
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Table of Contents</a:t>
+            </a:r>
+            <a:endParaRPr lang="bg-BG" dirty="0" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="423939" name="Rectangle 3" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noChangeArrowheads="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph idx="1" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="323850" y="1066800" />
+            <a:ext cx="8496300" cy="5530850" />
+          </a:xfrm>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="452438" indent="-452438">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:buFontTx />
+              <a:buAutoNum type="arabicPeriod" />
+              <a:tabLst />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>What is Recursion?</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="452438" indent="-452438">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:buFontTx />
+              <a:buAutoNum type="arabicPeriod" />
+              <a:tabLst />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Calculating Factorial Recursively</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="452438" indent="-452438">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:buFontTx />
+              <a:buAutoNum type="arabicPeriod" />
+              <a:tabLst />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Generating All </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0">
+                <a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0" />
+                <a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0" />
+              </a:rPr>
+              <a:t>0</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>/</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0">
+                <a:latin typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0" />
+                <a:cs typeface="Consolas" panose="020B0609020204030204" pitchFamily="49" charset="0" />
+              </a:rPr>
+              <a:t>1</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t> Vectors Recursively</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="452438" indent="-452438">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:buFontTx />
+              <a:buAutoNum type="arabicPeriod" />
+              <a:tabLst />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Finding All Paths in a Labyrinth Recursively</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="452438" indent="-452438">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:buFontTx />
+              <a:buAutoNum type="arabicPeriod" />
+              <a:tabLst />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Recursion or Iteration?</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="804863" lvl="1" indent="-457200">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Harmful Recursion</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="804863" lvl="1" indent="-457200">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" smtClean="0" />
+              <a:t>Optimizing Bad Recursion</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Slide Number Placeholder 3" />
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" />
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldNum" sz="quarter" idx="10" />
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr />
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr>
+              <a:defRPr />
+            </a:pPr>
+            <a:fld id="{58452FF4-89E3-4D1B-9927-2DBDC00E58D7}" type="slidenum">
+              <a:rPr lang="en-US" smtClean="0" />
+              <a:pPr>
+                <a:defRPr />
+              </a:pPr>
+              <a:t>2</a:t>
+            </a:fld>
+            <a:endParaRPr lang="en-US" dirty="0" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:pic>
+        <p:nvPicPr>
+          <p:cNvPr id="22532" name="Picture 4" descr="C:\Trash\book-open.png" />
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1" noChangeArrowheads="1" />
+          </p:cNvPicPr>
+          <p:nvPr />
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId3" cstate="screen">
+            <a:duotone>
+              <a:prstClr val="black" />
+              <a:schemeClr val="accent5">
+                <a:tint val="45000" />
+                <a:satMod val="400000" />
+              </a:schemeClr>
+            </a:duotone>
+            <a:lum contrast="20000" />
+          </a:blip>
+          <a:srcRect />
+          <a:stretch>
+            <a:fillRect />
+          </a:stretch>
+        </p:blipFill>
+        <p:spPr bwMode="auto">
+          <a:xfrm>
+            <a:off x="6096000" y="4572000" />
+            <a:ext cx="2486025" cy="1657350" />
+          </a:xfrm>
+          <a:prstGeom prst="snip2DiagRect">
+            <a:avLst>
+              <a:gd name="adj1" fmla="val 35640" />
+              <a:gd name="adj2" fmla="val 28072" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill />
+          <a:effectLst>
+            <a:softEdge rad="31750" />
+          </a:effectLst>
+        </p:spPr>
+      </p:pic>
+    </p:spTree>
+    <p:extLst>
+      <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
+        <p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="2536576809" />
+      </p:ext>
+    </p:extLst>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping />
+  </p:clrMapOvr>
+  <p:transition />
+  <p:timing>
+    <p:tnLst>
+      <p:par>
+        <p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot" />
+      </p:par>
+    </p:tnLst>
+  </p:timing>
+</p:sld>
