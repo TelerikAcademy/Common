@@ -1,4 +1,4 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Shapes
 {
   using System.Text;
 
@@ -31,7 +31,12 @@
 
     public override string ToString()
     {
-      return string.Format(TEXT_FORMAT, new string(' ', this.IndentCount * 2), this.Line.ToString());
+      return string.Format(TEXT_FORMAT, GetIndent(), this.Line.ToString());
+    }
+
+    public string GetIndent()
+    {
+      return new string(' ', this.IndentCount * 2);
     }
   }
 }

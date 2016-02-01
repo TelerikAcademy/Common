@@ -1,4 +1,4 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Shapes
 {
   using System;
   using System.Collections.Generic;
@@ -6,22 +6,18 @@
   using System.IO;
   using System.Runtime.InteropServices;
 
-  public class MDShapeImage : MDShape
+  public class MDShapeImage : MDShapeBox
   {
     private const string IMAGE_TAG = @"<img class=""slide-image"" src=""imgs\slide{0:D2}\{1}.png"" style=""top:{2:F2}%; left:{3:F2}%; width:{4:F2}%; z-index:-1"" />";
     private const string IMAGE_FOLDER = @"{0}\imgs\slide{1:D2}\";
     private const string IMAGE_NAME = @"{0}{1}.png";
-    private const double SLIDE_WIDTH = 9144000.0;
-    private const double SLIDE_HEIGHT = 9144000.0;
 
-    public MDShapeImage(int slideIndex, Image image, string imageId, long x, long y, long width)
+    public MDShapeImage(int slideIndex, Image image, string imageId, long top, long left, long width)
+      :base(top, left, width)
     {
       this.SlideIndex = slideIndex;
       this.Image = image;
       this.ImageId = imageId;
-      this.X = x * 100 / SLIDE_WIDTH;
-      this.Y = y * 100 / SLIDE_HEIGHT;
-      this.Width = width * 100 / SLIDE_WIDTH;
     }
 
     // TODO: Move from here
@@ -50,16 +46,12 @@
 
     public Image Image { get; private set; }
 
-    public double Width { get; private set; }
-
-    public double X { get; private set; }
-
-    public double Y { get; private set; }
-
     public override string ToString()
     {
+      // TODO: Move from here
       SaveImageToFile();
-      return string.Format(IMAGE_TAG, this.SlideIndex, this.ImageId, this.Y, this.X, this.Width);
+
+      return string.Format(IMAGE_TAG, this.SlideIndex, this.ImageId, this.Left, this.Top, this.Width);
     }
   }
 }

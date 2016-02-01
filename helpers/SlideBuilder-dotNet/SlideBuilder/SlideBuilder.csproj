@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Shapes\MDShapeBalloon.cs" />
-    <Compile Include="Models\Shapes\MDShapeCode.cs" />
+    <Compile Include="Models\Shapes\MDShapeBox.cs" />
+    <Compile Include="Models\Shapes\MDShapeMultiCode.cs" />
     <Compile Include="Models\Shapes\MDShapeImage.cs" />
     <Compile Include="Models\MDPresentation.cs" />
     <Compile Include="Models\MDSection.cs" />
@@ -56,8 +57,7 @@
     <Compile Include="Models\Shapes\MDShape.cs" />
     <Compile Include="Models\Shapes\MDShapeText.cs" />
     <Compile Include="Models\Slides\MDSlideDemo.cs" />
-    <Compile Include="Models\Slides\MDSlideSection.cs" />
-    <Compile Include="Models\Slides\MDSlideTitle.cs" />
+    <Compile Include="Models\Slides\MDSlidePresentationTitle.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="SampleXML\Slide2.xml">
+    <Content Include="SampleXML\SlideWithMultiCode.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="SampleXML\Slide3.xml">

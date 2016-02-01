@@ -1,7 +1,8 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Slides
 {
   using System.Linq;
   using System.Collections.Generic;
+  using Shapes;
 
   public class MDSlide
   {
@@ -9,9 +10,10 @@
     {
       this.Titles = new List<MDShapeTitle>();
       this.Shapes = new LinkedList<MDShape>();
+      this.CssClass = new List<string>();
     }
 
-    public bool IsNewSection { get; set; }
+    public bool IsTitleSlide { get; set; }
 
     public bool IsDemoSlide { get; set; }
 
@@ -31,13 +33,13 @@
       }
     }
 
-    public string CssClass { get; protected set; }
+    public IList<string> CssClass { get; protected set; }
 
     public IList<MDShapeTitle> Titles { get; set; }
 
     public LinkedList<MDShape> Shapes { get; set; }
 
-    public virtual void AddShape(MDShapeText mdShape)
+    public virtual void AddShape(MDShape mdShape)
     {
       this.Shapes.AddLast(mdShape);
     }
@@ -61,11 +63,11 @@
 
       List<string> attr = new List<string>();
       attr.Add(string.Format("id:'{0}'", id));
-      attr.Add(string.Format("class:'{0}'", this.CssClass));
+      attr.Add(string.Format("class:'{0}'", string.Join(" ", this.CssClass)));
       attr.Add(string.Format("showInPresentation:'{0}'", showInPresentation));
       attr.Add(string.Format("hasScriptWrapper:'{0}'", hasScriptWrapper));
       attr.Add(string.Format("style:'{0}'", ""));
-      
+
       return "<!-- attr: { " + string.Join(", ", attr) + " } -->";
     }
   }

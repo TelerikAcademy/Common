@@ -1,17 +1,21 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Shapes
 {
-    public class MDShapeBalloon : MDShapeText
+  public class MDShapeBalloon : MDShapeBox
+  {
+    private const string BALLOON_TAG =
+      @"<div class=""fragment balloon"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%"">{0}</div>";
+
+    public MDShapeBalloon(string line, long top, long left, long width)
+        : base(top, left, width)
     {
-        private const string BALLOON_TAG = @"<div class=""fragment balloon"" style=""width:250px; top:60%; left:10%"">{0}</div>";
-
-        public MDShapeBalloon(string line)
-            : base(line)
-        {
-        }
-
-        public override string ToString()
-        {
-            return string.Format(BALLOON_TAG, this.Line.ToString());
-        }
+      this.Line = line;
     }
+
+    public string Line { get; private set; }
+
+    public override string ToString()
+    {
+      return string.Format(BALLOON_TAG, this.Line.ToString(), this.Top, this.Left, this.Width);
+    }
+  }
 }

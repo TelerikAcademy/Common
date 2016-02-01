@@ -1,4 +1,4 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Shapes
 {
   public class MDShapeTitle : MDShapeText
   {
@@ -8,14 +8,14 @@
     private bool isSecTitle;
 
     public MDShapeTitle(string line)
-        : base(line)
+        : this(line, false)
     {
     }
 
     public MDShapeTitle(string line, bool isSecondaryTitle)
-        : this(line)
+        : base(line)
     {
-      this.isSecTitle = true;
+      this.isSecTitle = isSecondaryTitle;
     }
 
     public override string ToString()

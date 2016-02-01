@@ -1,9 +1,10 @@
 ﻿namespace SlideBuilder.Models
 {
-    using System;
-    using System.Collections.Generic;
+  using Slides;
+  using System;
+  using System.Collections.Generic;
 
-    public class MDSection
+  public class MDSection
     {
         public MDSection()
         {

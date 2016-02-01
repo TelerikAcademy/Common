@@ -1,4 +1,4 @@
-﻿namespace SlideBuilder.Models
+﻿namespace SlideBuilder.Models.Shapes
 {
   using System.Text;
 
