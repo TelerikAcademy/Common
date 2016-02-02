@@ -4,25 +4,52 @@
   using System.Collections.Generic;
   using Shapes;
 
-  public class MDSlidePresentationTitle : MDSlide
+  public class MDSlidePresentationTitle : MDSlide, IMDSlide
   {
-    public const string SIGNATURE_FORMAT = "<div class=\"signature\">\n{0}{1}{2}</div>";
+    public const string SIGNATURE_FORMAT = "<div class=\"signature\">\n\t{0}\t{1}\t{2}</div>";
     public const string SIGNATURE_COURSE_FORMAT = "<p class=\"signature-course\">{0}</p>\n";
     public const string SIGNATURE_INITIATIVE_FORMAT = "<p class=\"signature-initiative\">{0}</p>\n";
     public const string SIGNATURE_LINK_FORMAT = "<a href=\"{0}\" class=\"signature-link\">{0}</a>\n";
 
-    private IList<string> Signature { get; set; }
+    private IList<string> signature;
 
     public MDSlidePresentationTitle()
         : base()
     {
-      this.Signature = new List<string>();
+      this.signature = new List<string>();
       this.CssClass.Add("slide-title");
     }
 
-    public override void AddShape(MDShape mdShape)
+    public override bool IsTitleSlide
     {
-      this.Signature.Add(mdShape.ToString());
+      get
+      {
+        return true;
+      }
+    }
+
+    public override void AddShape(IMDShape mdShape)
+    {
+      if (mdShape is MDShapeTitle)
+      {
+        this.Titles.Add(mdShape);
+      }
+      else if (mdShape is MDShapeImage)
+      {
+        this.Shapes.AddLast(mdShape);
+      }
+      else
+      {
+        this.signature.Add(mdShape.ToString());
+      }
+    }
+
+    public override void AddShapes(IEnumerable<IMDShape> mdShapes)
+    {
+      foreach (IMDShape mdShape in mdShapes)
+      {
+        this.AddShape(mdShape);
+      }
     }
 
     public override string[] ToStringArray()
@@ -30,7 +57,7 @@
       if (this.Shapes.Count <= 0) { return new string[0]; }
 
       List<string> result = new List<string>();
-      
+
       result.AddRange(base.ToStringArray());
       result.Add(ParseSignature());
 
@@ -39,9 +66,9 @@
 
     private string ParseSignature()
     {
-      string initiative = string.Format(SIGNATURE_INITIATIVE_FORMAT, this.Signature.FirstOrDefault(s => s.Contains("Telerik") && s.Contains("Academy")).Trim(new char[] { '-', ' ' }));
-      string link = string.Format(SIGNATURE_LINK_FORMAT, this.Signature.FirstOrDefault(s => s.Contains("http")).Trim(new char[] { '-', ' ' }));
-      string course = string.Format(SIGNATURE_COURSE_FORMAT, this.Signature.FirstOrDefault(s => !s.Contains("http") && !s.Contains("Telerik")).Trim(new char[] { '-', ' ' }));
+      string initiative = string.Format(SIGNATURE_INITIATIVE_FORMAT, this.signature.FirstOrDefault(s => s.Contains("Telerik") && s.Contains("Academy")).Trim(new char[] { '-', ' ' }));
+      string link = string.Format(SIGNATURE_LINK_FORMAT, this.signature.FirstOrDefault(s => s.Contains("http")).Trim(new char[] { '-', ' ' }));
+      string course = string.Format(SIGNATURE_COURSE_FORMAT, this.signature.FirstOrDefault(s => !s.Contains("http") && !s.Contains("Telerik")).Trim(new char[] { '-', ' ' }));
 
       return string.Format(SIGNATURE_FORMAT, course, initiative, link);
     }

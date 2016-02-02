@@ -53,12 +53,15 @@
     <Compile Include="Models\MDPresentation.cs" />
     <Compile Include="Models\MDSection.cs" />
     <Compile Include="Models\Shapes\MDShapeTitle.cs" />
+    <Compile Include="Models\Shapes\ShapeType.cs" />
+    <Compile Include="Models\Slides\IMDSLide.cs" />
     <Compile Include="Models\Slides\MDSlide.cs" />
-    <Compile Include="Models\Shapes\MDShape.cs" />
+    <Compile Include="Models\Shapes\IMDShape.cs" />
     <Compile Include="Models\Shapes\MDShapeText.cs" />
     <Compile Include="Models\Slides\MDSlideDemo.cs" />
     <Compile Include="Models\Slides\MDSlidePresentationTitle.cs" />
-    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Slides\MDSlideSection.cs" />
+    <Compile Include="Models\Slides\SlideType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SlideConverterV2.cs" />

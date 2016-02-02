@@ -1,16 +1,16 @@
 ﻿namespace SlideBuilder.Models.Shapes
 {
+  using System;
   using System.Collections.Generic;
   using System.Text;
 
-  public class MDShapeMultiCode : MDShape
+  public class MDShapeMultiCode : IMDShape
   {
     private const string CODE_FORMAT = "{0}{1}";
     private const string CODE_BEGIN_FORMAT = "```{0}";
     private const string CODE_END_FORMAT = "```";
 
     public MDShapeMultiCode(string lang)
-    //: base(line)
     {
       this.Lang = lang;
       this.Lines = new List<MDShapeText>();
@@ -20,8 +20,15 @@
 
     public IList<MDShapeText> Lines { get; private set; }
 
-    public void AddCode(MDShapeText shapeText)
+    public void AddCodeLine(MDShapeText shapeText)
     {
+    }
+
+    public void AddLine(string line, int indent)
+    {
+      var shapeText =  new MDShapeText();
+      shapeText.AddLine(line, indent);
+
       this.Lines.Add(shapeText);
     }
 

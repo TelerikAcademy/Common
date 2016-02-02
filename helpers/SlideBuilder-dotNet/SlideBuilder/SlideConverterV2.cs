@@ -15,6 +15,7 @@
   using System.Drawing;
   using Models.Slides;
   using Models.Shapes;
+  using System.Runtime.InteropServices;
 
   public class SlideConverterV2
   {
@@ -23,9 +24,21 @@
     public const string PACKAGE_FILE_PATH = @"..\..\package.json";
     public const string OPENJS_FILE_CONTENT = @"require(""openurl"").open(""http://localhost:10000/index.html"");";
 
+    private static Dictionary<string, string> textReplace = new Dictionary<string, string>()
+    {
+      { "``", "" },
+      { "", "&rarr;" },
+      { "Example", "_Example_" },
+      { "EXAMPLE", "_Example_" },
+      { "Note", "_Note_" },
+      { "NOTE", "_Note_" },
+      { "Live Demo", "[Demo]()" },
+    };
+
     private static string gitHub;
     private static string lang;
     private static string imagesRootFolder;
+    private static int presentationImageIndex;
 
     public static void ExtractPPTXtoMD(string rootDir, string githubName, string language, string destinationDir = null)
     {
@@ -52,23 +65,22 @@
         MDPresentation mdPresentation = new MDPresentation();
         using (PresentationDocument presentationDocument = PresentationDocument.Open(filePath, false))
         {
+          presentationImageIndex = 0;
           IList<SlidePart> slideParts = GetSlideParts(presentationDocument);
           for (int slideIndex = 0; slideIndex < slideParts.Count; slideIndex++)
           {
             MDSlide mdSlide = ParseSlidePart(slideParts, slideIndex);
-            if (mdSlide.IsTitleSlide && !mdSlide.IsDemoSlide)
-            {
-              mdPresentation.StartNewSection();
-            }
-
+            mdPresentation.StartNewSection(mdSlide.IsTitleSlide);
             mdPresentation.AddSlide(mdSlide);
           }
         }
 
         // add all files
-        AddTableOfContentsMD(lectureDir);
+        AddTableOfContentsREADME(lectureDir);
         AddLocalServerFiles(slidesDir);
         File.WriteAllLines(slidesDir + @"\README.md", mdPresentation.ToStringArray());
+
+        Console.WriteLine("Adde files for presentation:\n{0}\n", filePath.Substring(rootDir.Length));
       }
     }
 
@@ -78,94 +90,228 @@
       if (slidePart == null) { throw new ArgumentNullException("slidePart"); }
       if (slidePart.Slide == null) { throw new ArgumentNullException("slidePart.Slide"); }
 
-      MDSlide slide = slideIndex != 0 ? new MDSlide() : new MDSlidePresentationTitle();
-      slide.IsTitleSlide = slideIndex == 1;
-
-      var plShape = slidePart.Slide.Descendants<PlaceholderShape>().FirstOrDefault();
+      SlideType slideType = GetSlideType(slidePart, slideIndex);
+      MDSlide slide = AssignSlide(slideType);
 
       var shapes = slidePart.Slide.Descendants<Shape>().Where(s => s.Descendants<Drawing.Paragraph>().Any());
       foreach (Shape shape in shapes)
       {
         if (string.IsNullOrWhiteSpace(shape.InnerText)) { continue; }
-        var type = GetType(shape);
-        var shapeSchemeColor = shape.Descendants<Drawing.SchemeColor>().Select(cs => cs.Val).FirstOrDefault();
-        var shapeColor = shape.Descendants<Drawing.RgbColorModelHex>().Select(cm => cm.Val).FirstOrDefault();
+        slide.AddShapes(GetShapes(shape));
+      }
 
-        var paragraphs = shape.Descendants<Drawing.Paragraph>().ToList();
-        for (int i = 0; i < paragraphs.Count(); i++)
+      var pictures = slidePart.Slide.Descendants<Picture>().ToList();
+      foreach (var picture in pictures)
+      {
+        string rId = picture.BlipFill.Blip.Embed.Value;
+        ImagePart imagePart = (ImagePart)slidePart.Slide.SlidePart.GetPartById(rId);
+        Image image = Image.FromStream(imagePart.GetStream());
+
+        SaveImageToFile(image, slideIndex);
+        MDShapeImage mdImage = GetImage(slideIndex, image, picture);
+        presentationImageIndex++;
+
+        slide.AddShape(mdImage);
+      }
+
+      return slide;
+    }
+
+    private static MDShapeImage GetImage(int slideIndex, Image image, Picture picture)
+    {
+      string rId = picture.BlipFill.Blip.Embed.Value;
+
+      var offset = picture.ShapeProperties.Transform2D.Offset;
+      long top = (offset.X.HasValue ? offset.X.Value : 0);
+      long left = (offset.Y.HasValue ? offset.Y.Value : 0);
+      long width = picture.ShapeProperties.Transform2D.Extents.Cx;
+
+      return new MDShapeImage(image, presentationImageIndex, top, left, width); ;
+    }
+
+    public static void SaveImageToFile(Image img, int slideIndex)
+    {
+      try
+      {
+        // TODO: Folder should be relative to slides\imgs
+        string dirPath = string.Format(MDShapeImage.IMAGE_FULL_FOLDER_PATH, imagesRootFolder);
+        if (!Directory.Exists(dirPath))
         {
-          var paragraph = paragraphs[i];
-          string line = paragraph.InnerText;
-          switch (type)
+          Directory.CreateDirectory(dirPath);
+        }
+        string filePath = string.Format(MDShapeImage.IMAGE_FULL_NAME, dirPath, presentationImageIndex);
+        img.Save(filePath);
+      }
+      catch (ExternalException ex)
+      {
+        Console.WriteLine(string.Format("Problem with saving image {0} on slide N: {1}", presentationImageIndex, slideIndex), ex.Message);
+      }
+    }
+
+    private static ICollection<IMDShape> GetShapes(Shape shape)
+    {
+      ICollection<IMDShape> mdShapes = new List<IMDShape>();
+      var type = GetShapeType(shape);
+
+      var paragraphs = shape.Descendants<Drawing.Paragraph>().ToList();
+      for (int paragraphIndex = 0; paragraphIndex < paragraphs.Count(); paragraphIndex++)
+      {
+        var paragraph = paragraphs[paragraphIndex];
+        string text = ParseText(paragraph);
+        switch (type)
+        {
+          case ShapeType.CenteredTitle:
+            mdShapes.Add(new MDShapeTitle(text));
+            break;
+          case ShapeType.SlideSection:
+            mdShapes.Add(new MDShapeTitle(text));
+            break;
+          case ShapeType.Title:
+            mdShapes.Add(new MDShapeTitle(text));
+            break;
+          case ShapeType.SubTitle:
+            mdShapes.Add(new MDShapeTitle(text, true));
+            break;
+          case ShapeType.SlideDemo:
+            mdShapes.Add(new MDShapeTitle(text, true));
+            break;
+          case ShapeType.MultilineCode:
+            IMDShape mdShape = new MDShapeMultiCode(lang);
+            while (paragraphIndex < paragraphs.Count())
+            {
+              paragraph = paragraphs[paragraphIndex];
+              mdShape.AddLine(ParseText(paragraph), GetIndent(paragraph));
+              paragraphIndex++;
+            }
+            mdShapes.Add(mdShape);
+            break;
+          case ShapeType.Balloon:
+            var offset = shape.ShapeProperties.Transform2D.Offset;
+            long top = (offset.Y.HasValue ? offset.Y.Value : 0);
+            long left = (offset.X.HasValue ? offset.X.Value : 0);
+            long width = shape.ShapeProperties.Transform2D.Extents.Cx;
+
+            mdShapes.Add(new MDShapeBalloon(text, top, left, width));
+            break;
+          case ShapeType.None:
+            if (!string.IsNullOrEmpty(text))
+            {
+              mdShapes.Add(new MDShapeText(text, GetIndent(paragraph)));
+            }
+            break;
+          case ShapeType.SlideNumber:
+            // Don't add this to the slides
+            break;
+        }
+      }
+
+      return mdShapes;
+    }
+
+    private static MDSlide AssignSlide(SlideType type)
+    {
+      MDSlide slide;
+      switch (type)
+      {
+        case SlideType.PresentationTitle:
+          slide = new MDSlidePresentationTitle();
+          break;
+        case SlideType.TableOfContents:
+          slide = new MDSlide();
+          slide.IsTitleSlide = true;
+          break;
+        case SlideType.SectionStart:
+          slide = new MDSlideSection();
+          break;
+        case SlideType.Demo:
+          slide = new MDSlideDemo();
+          break;
+        default:
+          slide = new MDSlide();
+          break;
+      }
+
+      return slide;
+    }
+
+    private static SlideType GetSlideType(SlidePart slidePart, int slideIndex)
+    {
+      SlideType type = SlideType.None;
+      if (slideIndex == 0)
+      {
+        type = SlideType.PresentationTitle;
+      }
+      else if (slideIndex == 1)
+      {
+        type = SlideType.TableOfContents;
+      }
+      else
+      {
+        var placeHolders = slidePart.Slide.Descendants<PlaceholderShape>().Where(ph => ph.Type != null);
+        bool hasCenteredTitle = (placeHolders.Any(ph => (ph.Type ?? PlaceholderValues.Object) == PlaceholderValues.CenteredTitle));
+
+        if (hasCenteredTitle)
+        {
+          if (slidePart.Slide.InnerText.Contains("Demo"))
           {
-            case PlaceholderValues.CenteredTitle:
-              slide.Titles.Add(new MDShapeTitle(paragraph.InnerText));
-              slide.IsTitleSlide = true;
-              ChackIfSlideSection(slide);
-              break;
-            case PlaceholderValues.Title:
-              slide.Titles.Add(new MDShapeTitle(paragraph.InnerText));
-              break;
-            case PlaceholderValues.SubTitle:
-              line = CheckIfDemoSlide(slide, line);
-              slide.Titles.Add(new MDShapeTitle(line, true));
-              break;
-            case PlaceholderValues.Object:
-              line = CheckIfDemoSlide(slide, line);
-              if (shapeColor != null && shapeColor == "8CF4F2")
-              {
-                var multiCode = new MDShapeMultiCode(lang);
-                for (; i < paragraphs.Count(); i++)
-                {
-                  paragraph = paragraphs[i];
-                  multiCode.AddCode(new MDShapeText(paragraph.InnerText, GetIndent(paragraph)));
-                }
-
-                slide.AddShape(multiCode);
-              }
-              else if (IsBalloon(shape))
-              {
-                // TODO: Get coordinates
-                var offset = shape.ShapeProperties.Transform2D.Offset;
-                long top = (offset.Y.HasValue ? offset.Y.Value : 0);
-                long left = (offset.X.HasValue ? offset.X.Value : 0);
-                long width = shape.ShapeProperties.Transform2D.Extents.Cx;
-                
-                slide.AddShape(new MDShapeBalloon(line, top, left, width));
-              }
-              else if (paragraph.InnerText.Length > 0)
-              {
-                slide.AddShape(new MDShapeText(GetParagraphText(paragraph), GetIndent(paragraph)));
-              }
-              break;
-            case PlaceholderValues.Body:
-              if (shape.NonVisualShapeProperties.NonVisualDrawingProperties.Name.Value == "Text Placeholder 5")
-              // TODO: Find better way to detect
-              // (shapeSchemeColor != null && shapeSchemeColor == Drawing.SchemeColorValues.Accent5))
-              {
-                var multiCode = new MDShapeMultiCode(lang);
-                for (; i < paragraphs.Count(); i++)
-                {
-                  paragraph = paragraphs[i];
-                  multiCode.AddCode(new MDShapeText(paragraph.InnerText, GetIndent(paragraph)));
-                }
-
-                slide.AddShape(multiCode);
-              }
-              else
-              {
-                slide.AddShape(new MDShapeText(paragraph.InnerText));
-              }
-              break;
-            case PlaceholderValues.SlideNumber: break;
-            default: slide.AddShape(new MDShapeText(paragraph.InnerText)); break;
+            type = SlideType.Demo;
+          }
+          else
+          {
+            type = SlideType.SectionStart;
           }
         }
       }
 
-      GetImages(slideIndex, slidePart, slide);
+      return type;
+    }
 
-      return slide;
+    private static ShapeType GetShapeType(Shape shape)
+    {
+      ShapeType type = ShapeType.None;
+      var placeHolders = shape.Descendants<PlaceholderShape>().Where(ph => ph.Type != null);
+      var openXmlType = (placeHolders.Select(ph => ph.Type).FirstOrDefault() ?? PlaceholderValues.Object).Value;
+      switch (openXmlType)
+      {
+        case PlaceholderValues.CenteredTitle:
+          type = ShapeType.CenteredTitle; break;
+        case PlaceholderValues.Title:
+          type = ShapeType.Title; break;
+        case PlaceholderValues.SubTitle:
+          type = ShapeType.SubTitle; break;
+        case PlaceholderValues.Object:
+          if (IsMultilineCode(shape))
+          {
+            type = ShapeType.MultilineCode;
+          }
+          else if (IsBalloon(shape))
+          {
+            type = ShapeType.Balloon;
+          }
+          break;
+        case PlaceholderValues.Body:
+          if (IsMultilineCode(shape))
+          {
+            type = ShapeType.MultilineCode;
+          }
+          break;
+        case PlaceholderValues.SlideNumber:
+          type = ShapeType.SlideNumber;
+          break;
+      }
+
+      return type;
+    }
+
+    private static bool IsMultilineCode(Shape shape)
+    {
+      bool isMultilineCode = false;
+      var shapeColor = shape.Descendants<Drawing.RgbColorModelHex>().Select(cm => cm.Val).FirstOrDefault();
+      isMultilineCode = (shapeColor != null && shapeColor == "8CF4F2") ||
+        shape.NonVisualShapeProperties.NonVisualDrawingProperties.Name.Value == "Text Placeholder 5";
+      // TODO: Find better way to detect
+
+      return isMultilineCode;
     }
 
     private static bool IsBalloon(Shape shape)
@@ -182,11 +328,10 @@
           {
             var presetGeometry = shape.Descendants<DocumentFormat.OpenXml.Drawing.PresetGeometry>().FirstOrDefault();
 
-            if (bodyWrapp.Value == DocumentFormat.OpenXml.Drawing.TextWrappingValues.Square &&
+            if (bodyWrapp.Value == Drawing.TextWrappingValues.Square &&
                 presetGeometry != null && presetGeometry.Prefix != null)
             {
               var wrappShape = presetGeometry.Preset.Value;
-
               isBalloon = wrappShape == Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
             }
           }
@@ -194,27 +339,6 @@
       }
 
       return isBalloon;
-    }
-
-    private static void ChackIfSlideSection(MDSlide slide)
-    {
-      if (!(slide is MDSlidePresentationTitle))
-      {
-        slide.CssClass.Add("slide-section");
-      }
-    }
-
-    private static string CheckIfDemoSlide(MDSlide slide, string line)
-    {
-      if (line.Contains("Demo"))
-      {
-        slide.IsDemoSlide = true;
-        slide.CssClass.Add("demo");
-        slide.CssClass.Add("silde-section");
-        line = "[Demo]()"; // TODO: add link to github demo
-      }
-
-      return line;
     }
 
     private static int GetIndent(Drawing.Paragraph paragraph)
@@ -226,34 +350,6 @@
       }
 
       return indent;
-    }
-
-    private static PlaceholderValues GetType(Shape shape)
-    {
-      var placeHolders = shape.Descendants<PlaceholderShape>().Where(ph => ph.Type != null);
-      var type = placeHolders.Select(ph => ph.Type).FirstOrDefault();
-
-      return type ?? PlaceholderValues.Object;
-    }
-
-    private static void GetImages(int slideIndex, SlidePart slidePart, MDSlide slide)
-    {
-      var images = slidePart.Slide.Descendants<Picture>().ToList();
-      foreach (var image in images)
-      {
-        string rId = image.BlipFill.Blip.Embed.Value;
-        ImagePart imagePart = (ImagePart)slidePart.Slide.SlidePart.GetPartById(rId);
-        var img = Image.FromStream(imagePart.GetStream());
-
-        var offset = image.ShapeProperties.Transform2D.Offset;
-        long top = (offset.X.HasValue ? offset.X.Value : 0);
-        long left = (offset.Y.HasValue ? offset.Y.Value : 0);
-        long width = image.ShapeProperties.Transform2D.Extents.Cx;
-
-        MDShapeImage mdImage = new MDShapeImage(slideIndex, img, rId, top, left, width);
-        slide.Shapes.AddLast(mdImage);
-        mdImage.SaveImageToFile(imagesRootFolder);
-      }
     }
 
     private static IList<string> GetAllPPTXFilesFrom(string dir)
@@ -309,7 +405,7 @@
       return null;
     }
 
-    private static string GetParagraphText(Drawing.Paragraph paragraph)
+    private static string ParseText(Drawing.Paragraph paragraph)
     {
       List<string> texts = new List<string>();
 
@@ -319,13 +415,11 @@
         bool isCode = run.Descendants<Drawing.SchemeColor>().Any(sc => sc.Val == Drawing.SchemeColorValues.Accent5);
         bool isMultiCode = run.Descendants<Drawing.RgbColorModelHex>().Any(cm => cm.Val == "8CF4F2");
 
-        // var paragraphProperties = paragraph.Descendants<Drawing.ParagraphProperties>().FirstOrDefault();
-
         var text = run.Descendants<Drawing.Text>().FirstOrDefault();
         if (text != null)
         {
-          string textToInsert = text.Text.Replace("", "&rarr;");
-          if (isCode)
+          string textToInsert = text.Text;
+          if (isCode && !string.IsNullOrWhiteSpace(textToInsert))
           {
             textToInsert = string.Format("`{0}`", textToInsert.Trim());
           }
@@ -334,59 +428,13 @@
         }
       }
 
-      return string.Join("", texts);
-    }
-
-    private static void ParseParagraphText(MDSlide mdSlide, MDShapeText mdShape, Drawing.Text paragraphText)
-    {
-      if (paragraphText != null && paragraphText.Text.Length > 0)
+      string result = string.Join("", texts);
+      foreach (var replace in textReplace)
       {
-        var line = paragraphText.ToString();
-        //.Replace("``", "")
-        //.Replace("*", "x")
-        //.Replace("", "&rarr;");
-
-        //if (mdShape.IsTitle)
-        //{
-        //    mdSlide.Shapes.AddFirst(new MDShapeText(string.Format("# {0}", line)));
-        //}
-        //else if (mdShape.IsSecTitle)
-        //{
-        //    if (line == "Live Demo")
-        //    {
-        //        mdSlide.IsDemoSlide = true;
-        //        line = string.Format("[Demo]({0})", gitHub + @"/demos");
-
-        //        var demoTitle = mdSlide.Shapes.Last.Value.ToString();
-        //        mdSlide.Shapes.RemoveLast();
-        //        mdSlide.Shapes.AddLast(new MDShape(string.Format("<!-- {0} -->", demoTitle)));
-        //    }
-
-        //    mdSlide.Shapes.AddLast(new MDShape(string.Format("##  {0}", line)));
-        //}
-        //else if (mdShape.IsMultiCode)
-        //{
-        //    if (!mdShape.AddedCodeOpen)
-        //    {
-        //        mdSlide.Shapes.AddLast(new MDShapeText(""));
-        //        mdSlide.Shapes.AddLast(new MDShapeText(string.Format("```{0}", lang)));
-        //        mdSlide.Shapes.AddLast(new MDShapeText(line));
-        //        mdShape.AddedCodeOpen = true;
-        //    }
-        //    else
-        //    {
-        //        mdSlide.Shapes.AddLast(new MDShapeText(line));
-        //    }
-        //}
-        //else if (mdShape.IsBalloon)
-        //{
-        //    mdSlide.Shapes.AddLast(new MDShapeBalloon(line));
-        //}
-        //else
-        //{
-        //    mdSlide.Shapes.AddLast(new MDShapeText(string.Format("{0}- {1}", new string(' ', mdShape.IndentCount * 2), line)));
-        //}
+        result = result.Replace(replace.Key, replace.Value);
       }
+
+      return result;
     }
 
     private static string GetLecturePath(string file, string rootDir)
@@ -403,7 +451,7 @@
       return string.Format("{0} {1}", parts[0], string.Join("-", parts.Skip(1))).Replace(",", "");
     }
 
-    private static void AddTableOfContentsMD(DirectoryInfo lectureDir)
+    private static void AddTableOfContentsREADME(DirectoryInfo lectureDir)
     {
       string[] tableOfContents = {
                     string.Format("## {0}", lectureDir.Name.Replace("-", " ")),

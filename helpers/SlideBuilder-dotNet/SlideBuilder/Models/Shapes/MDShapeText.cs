@@ -2,23 +2,23 @@
 {
   using System.Text;
 
-  public class MDShapeText : MDShape
+  public class MDShapeText : IMDShape
   {
     private const string TEXT_FORMAT = "{0}- {1}";
 
     public MDShapeText()
-      : this("", 0)
     {
-    }
-
-    public MDShapeText(string line)
-        : this(line, 0)
-    {
+      this.Line = new StringBuilder();
     }
 
     public MDShapeText(string line, int indent)
+      : this()
     {
-      this.Line = new StringBuilder();
+      this.AddLine(line, indent);
+    }
+
+    public void AddLine(string line, int indent)
+    {
       this.Line.Append(line);
       this.IndentCount = indent;
     }
@@ -27,11 +27,10 @@
 
     public int IndentCount { get; set; }
 
-    public bool AddedCodeOpen { get; set; }
-
     public override string ToString()
     {
-      return string.Format(TEXT_FORMAT, GetIndent(), this.Line.ToString());
+      string text = this.Line.ToString();
+      return string.Format(TEXT_FORMAT, GetIndent(), text);
     }
 
     public string GetIndent()

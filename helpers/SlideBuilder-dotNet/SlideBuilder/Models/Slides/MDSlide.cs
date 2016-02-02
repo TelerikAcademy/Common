@@ -3,17 +3,19 @@
   using System.Linq;
   using System.Collections.Generic;
   using Shapes;
+  using System;
 
-  public class MDSlide
+  public class MDSlide : IMDSlide
   {
     public MDSlide()
     {
-      this.Titles = new List<MDShapeTitle>();
-      this.Shapes = new LinkedList<MDShape>();
+      this.Titles = new List<IMDShape>();
+      this.Shapes = new LinkedList<IMDShape>();
       this.CssClass = new List<string>();
+      this.IsTitleSlide = false;
     }
 
-    public bool IsTitleSlide { get; set; }
+    public virtual bool IsTitleSlide { get; set; }
 
     public bool IsDemoSlide { get; set; }
 
@@ -35,18 +37,36 @@
 
     public IList<string> CssClass { get; protected set; }
 
-    public IList<MDShapeTitle> Titles { get; set; }
+    public IList<IMDShape> Titles { get; set; }
 
-    public LinkedList<MDShape> Shapes { get; set; }
+    public LinkedList<IMDShape> Shapes { get; set; }
 
-    public virtual void AddShape(MDShape mdShape)
+    public virtual void AddShape(IMDShape mdShape)
     {
-      this.Shapes.AddLast(mdShape);
+      if (mdShape is MDShapeTitle)
+      {
+        this.Titles.Add(mdShape);
+      }
+      else
+      {
+        this.Shapes.AddLast(mdShape);
+      }
+    }
+
+    public virtual void AddShapes(IEnumerable<IMDShape> mdShapes)
+    {
+      foreach (IMDShape mdShape in mdShapes)
+      {
+        this.AddShape(mdShape);
+      }
     }
 
     public virtual string[] ToStringArray()
     {
-      if (this.Shapes.Count <= 0) { return new string[0]; }
+      if (this.Shapes.Count <= 0 || this.Titles.Count <= 0)
+      {
+        return new string[0];
+      }
 
       List<string> result = new List<string>();
       result.Add(this.BuildAttr(true));

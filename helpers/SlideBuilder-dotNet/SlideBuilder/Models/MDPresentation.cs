@@ -29,9 +29,12 @@
       }
     }
 
-    public void StartNewSection()
+    public void StartNewSection(bool isSectionStart)
     {
-      this.Sections.Add(new MDSection());
+      if (isSectionStart)
+      {
+        this.Sections.Add(new MDSection());
+      }
     }
 
     public string[] ToStringArray()

@@ -1,6 +1,6 @@
 ﻿namespace SlideBuilder.Models.Shapes
 {
-  public class MDShapeBalloon : MDShapeBox
+  public class MDShapeBalloon : MDShapeBox, IMDShape
   {
     private const string BALLOON_TAG =
       @"<div class=""fragment balloon"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%"">{0}</div>";

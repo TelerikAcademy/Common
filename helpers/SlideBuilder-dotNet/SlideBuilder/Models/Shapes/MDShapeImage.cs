@@ -1,57 +1,33 @@
 ﻿namespace SlideBuilder.Models.Shapes
 {
   using System;
-  using System.Collections.Generic;
   using System.Drawing;
   using System.IO;
   using System.Runtime.InteropServices;
 
-  public class MDShapeImage : MDShapeBox
+  public class MDShapeImage : MDShapeBox, IMDShape
   {
-    private const string IMAGE_TAG = @"<img class=""slide-image"" src=""imgs\slide{0:D2}\{1}.png"" style=""top:{2:F2}%; left:{3:F2}%; width:{4:F2}%; z-index:-1"" />";
-    private const string IMAGE_FOLDER = @"{0}\imgs\slide{1:D2}\";
-    private const string IMAGE_NAME = @"{0}{1}.png";
+    public const string IMAGE_FULL_FOLDER_PATH = @"{0}\imgs\";
+    public const string IMAGE_FULL_NAME = @"{0}pic{1:D2}.png";
+    private const string IMAGE_FOLDER_PATH = @"\imgs\";
+    private const string IMAGE_TAG = @"<img class=""slide-image"" src=""{0}"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%; z-index:-1"" />";
 
-    public MDShapeImage(int slideIndex, Image image, string imageId, long top, long left, long width)
+    public MDShapeImage(Image image, int imageIndex, long top, long left, long width)
       :base(top, left, width)
     {
-      this.SlideIndex = slideIndex;
       this.Image = image;
-      this.ImageId = imageId;
+      this.ImageIndex = imageIndex;
     }
 
-    // TODO: Move from here
-    public void SaveImageToFile(string rootFolder = @"D:\Temp\FromPPTX")
-    {
-      try
-      {
-        // TODO: Folder should be relative to slides\imgs
-        string dirPath = string.Format(IMAGE_FOLDER, rootFolder, this.SlideIndex);
-        if (!Directory.Exists(dirPath))
-        {
-          Directory.CreateDirectory(dirPath);
-        }
-        string filePath = string.Format(IMAGE_NAME, dirPath, this.ImageId);
-        this.Image.Save(filePath);
-      }
-      catch (ExternalException ex)
-      {
-        Console.WriteLine(string.Format("Unable to save image {0} on slide N: {1}", this.ImageId, this.SlideIndex), ex.Message);
-      }
-    }
-
-    public string ImageId { get; private set; }
-
-    public int SlideIndex { get; private set; }
+    public int ImageIndex { get; private set; }
 
     public Image Image { get; private set; }
 
     public override string ToString()
     {
-      // TODO: Move from here
-      SaveImageToFile();
+      string src = string.Format(IMAGE_FULL_NAME, IMAGE_FOLDER_PATH, this.ImageIndex);
 
-      return string.Format(IMAGE_TAG, this.SlideIndex, this.ImageId, this.Left, this.Top, this.Width);
+      return string.Format(IMAGE_TAG, src, this.Left, this.Top, this.Width);
     }
   }
 }
