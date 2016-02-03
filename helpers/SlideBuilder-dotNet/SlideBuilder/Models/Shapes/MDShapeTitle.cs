@@ -22,13 +22,23 @@
     public override string ToString()
     {
       string result;
+
+      string line = this.Line.ToString();
       if (this.isSecTitle)
       {
-        result = string.Format(SUBTITLE_FORMAT, this.Line);
+        result = string.Format(SUBTITLE_FORMAT, line);
       }
       else
       {
-        result = string.Format(TITLE_FORMAT, this.Line);
+        if (line.EndsWith(")")) // repeating titles
+        {
+          line = line.Substring(0, line.Length - 3).TrimEnd();
+          result = string.Format(COMMENT_FORMAT, string.Format(TITLE_FORMAT, line));
+        }
+        else
+        {
+          result = string.Format(TITLE_FORMAT, line);
+        }
       }
 
       return result;

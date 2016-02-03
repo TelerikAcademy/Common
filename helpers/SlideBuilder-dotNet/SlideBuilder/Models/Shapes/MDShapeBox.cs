@@ -9,8 +9,8 @@ namespace SlideBuilder.Models.Shapes
 
     public MDShapeBox(long top, long left, long width)
     {
-      this.Top = top * 100 / SLIDE_WIDTH;
-      this.Left = left * 100 / SLIDE_HEIGHT;
+      this.Top = top * 100 / SLIDE_HEIGHT;
+      this.Left = left * 100 / SLIDE_WIDTH;
       this.Width = width * 100 / SLIDE_WIDTH;
     }
 

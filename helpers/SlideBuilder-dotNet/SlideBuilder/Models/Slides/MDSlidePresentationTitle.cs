@@ -59,7 +59,7 @@
       List<string> result = new List<string>();
 
       result.AddRange(base.ToStringArray());
-      result.Add(ParseSignature());
+      ; result.Add(ParseSignature());
 
       return result.ToArray();
     }

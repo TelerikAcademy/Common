@@ -93,6 +93,7 @@
       SlideType slideType = GetSlideType(slidePart, slideIndex);
       MDSlide slide = AssignSlide(slideType);
 
+      // Extract texts
       var shapes = slidePart.Slide.Descendants<Shape>().Where(s => s.Descendants<Drawing.Paragraph>().Any());
       foreach (Shape shape in shapes)
       {
@@ -100,6 +101,7 @@
         slide.AddShapes(GetShapes(shape));
       }
 
+      // Extract images
       var pictures = slidePart.Slide.Descendants<Picture>().ToList();
       foreach (var picture in pictures)
       {
@@ -112,6 +114,13 @@
         presentationImageIndex++;
 
         slide.AddShape(mdImage);
+      }
+
+      // Extract graphics
+      var graphics = slidePart.Slide.Descendants<GraphicFrame>().ToList();
+      foreach (var graphic in graphics)
+      {
+        // TODO: Find a way to export graphics as images
       }
 
       return slide;
@@ -133,7 +142,6 @@
     {
       try
       {
-        // TODO: Folder should be relative to slides\imgs
         string dirPath = string.Format(MDShapeImage.IMAGE_FULL_FOLDER_PATH, imagesRootFolder);
         if (!Directory.Exists(dirPath))
         {
@@ -199,13 +207,60 @@
               mdShapes.Add(new MDShapeText(text, GetIndent(paragraph)));
             }
             break;
+          case ShapeType.Box:
+            // TODO: render with dark blue box
+            break;
           case ShapeType.SlideNumber:
+            // Don't add this to the slides
+            break;
+          case ShapeType.UnknownBox:
             // Don't add this to the slides
             break;
         }
       }
 
       return mdShapes;
+    }
+
+    private static ShapeType GetShapeType(Shape shape)
+    {
+      ShapeType type = ShapeType.None;
+      var placeHolders = shape.Descendants<PlaceholderShape>().Where(ph => ph.Type != null);
+      var openXmlType = (placeHolders.Select(ph => ph.Type).FirstOrDefault() ?? PlaceholderValues.Object).Value;
+      switch (openXmlType)
+      {
+        case PlaceholderValues.CenteredTitle:
+          type = ShapeType.CenteredTitle; break;
+        case PlaceholderValues.Title:
+          type = ShapeType.Title; break;
+        case PlaceholderValues.SubTitle:
+          type = ShapeType.SubTitle; break;
+        case PlaceholderValues.Object:
+          if (IsMultilineCode(shape))
+          {
+            type = ShapeType.MultilineCode;
+          }
+          else if (IsBalloon(shape))
+          {
+            type = ShapeType.Balloon;
+          }
+          else if (IsOfShape(shape, Drawing.ShapeTypeValues.Rectangle))
+          {
+            type = ShapeType.UnknownBox;
+          }
+          break;
+        case PlaceholderValues.Body:
+          if (IsMultilineCode(shape))
+          {
+            type = ShapeType.MultilineCode;
+          }
+          break;
+        case PlaceholderValues.SlideNumber:
+          type = ShapeType.SlideNumber;
+          break;
+      }
+
+      return type;
     }
 
     private static MDSlide AssignSlide(SlideType type)
@@ -266,43 +321,6 @@
       return type;
     }
 
-    private static ShapeType GetShapeType(Shape shape)
-    {
-      ShapeType type = ShapeType.None;
-      var placeHolders = shape.Descendants<PlaceholderShape>().Where(ph => ph.Type != null);
-      var openXmlType = (placeHolders.Select(ph => ph.Type).FirstOrDefault() ?? PlaceholderValues.Object).Value;
-      switch (openXmlType)
-      {
-        case PlaceholderValues.CenteredTitle:
-          type = ShapeType.CenteredTitle; break;
-        case PlaceholderValues.Title:
-          type = ShapeType.Title; break;
-        case PlaceholderValues.SubTitle:
-          type = ShapeType.SubTitle; break;
-        case PlaceholderValues.Object:
-          if (IsMultilineCode(shape))
-          {
-            type = ShapeType.MultilineCode;
-          }
-          else if (IsBalloon(shape))
-          {
-            type = ShapeType.Balloon;
-          }
-          break;
-        case PlaceholderValues.Body:
-          if (IsMultilineCode(shape))
-          {
-            type = ShapeType.MultilineCode;
-          }
-          break;
-        case PlaceholderValues.SlideNumber:
-          type = ShapeType.SlideNumber;
-          break;
-      }
-
-      return type;
-    }
-
     private static bool IsMultilineCode(Shape shape)
     {
       bool isMultilineCode = false;
@@ -316,7 +334,12 @@
 
     private static bool IsBalloon(Shape shape)
     {
-      bool isBalloon = false;
+      return IsOfShape(shape, Drawing.ShapeTypeValues.WedgeRoundRectangleCallout);
+    }
+
+    private static bool IsOfShape(Shape shape, Drawing.ShapeTypeValues shapeType)
+    {
+      bool isOfShape = false;
       var textBody = shape.Descendants<TextBody>().FirstOrDefault();
       if (textBody != null)
       {
@@ -328,17 +351,16 @@
           {
             var presetGeometry = shape.Descendants<DocumentFormat.OpenXml.Drawing.PresetGeometry>().FirstOrDefault();
 
-            if (bodyWrapp.Value == Drawing.TextWrappingValues.Square &&
-                presetGeometry != null && presetGeometry.Prefix != null)
+            if (presetGeometry != null && presetGeometry.Prefix != null)
             {
               var wrappShape = presetGeometry.Preset.Value;
-              isBalloon = wrappShape == Drawing.ShapeTypeValues.WedgeRoundRectangleCallout;
+              isOfShape = wrappShape == shapeType;
             }
           }
         }
       }
 
-      return isBalloon;
+      return isOfShape;
     }
 
     private static int GetIndent(Drawing.Paragraph paragraph)

@@ -5,6 +5,7 @@
   public class MDShapeText : IMDShape
   {
     private const string TEXT_FORMAT = "{0}- {1}";
+    protected const string COMMENT_FORMAT = "<!-- {0} -->";
 
     public MDShapeText()
     {

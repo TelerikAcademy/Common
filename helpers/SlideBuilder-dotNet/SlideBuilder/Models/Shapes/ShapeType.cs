@@ -13,5 +13,7 @@
 
     MultilineCode = 7,
     Balloon = 8,
+    UnknownBox = 9,
+    Box = 10,
   }
 }
