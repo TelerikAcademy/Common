@@ -12,7 +12,7 @@
     private const string IMAGE_FOLDER_PATH = @"\imgs\";
     
     // Added <!-- --> to prevent images to show in md
-    private const string IMAGE_TAG = @"<!-- <img class=""slide-image"" src=""{0}"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%; z-index:-1"" /> -->";
+    private const string IMAGE_TAG = @"<!-- <img class=""slide-image"" showInPresentation=""true"" src=""{0}"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%; z-index:-1"" /> -->";
 
     public MDShapeImage(Image image, int imageIndex, long top, long left, long width)
       :base(top, left, width)
