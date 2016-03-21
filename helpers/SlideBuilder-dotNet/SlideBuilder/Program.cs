@@ -5,10 +5,10 @@
     static void Main()
     {
       SlideConverterV2.ExtractPPTXtoMD(
-          @"D:\Materials\Telerik Academy\12. DSA\SVN 2014\7. Recursion", // Source folder
-          "CSharp-Part-1", // GitHub repo name
+          @"C:\Users\mvesheff\Desktop\00. Course-Intro", // Source folder
+          "CSharp-Fundamentals", // GitHub repo name
           "cs", // Code language 
-          @"D:\Materials\Telerik Academy\12. DSA\NewMDs\07. Recursion"); // destination folder
+          @"C:\Users\mvesheff\Desktop\00. Course-Intro"); // destination folder
     }
   }
 }

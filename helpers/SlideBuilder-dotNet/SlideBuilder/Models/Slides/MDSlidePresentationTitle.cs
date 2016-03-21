@@ -59,16 +59,16 @@
       List<string> result = new List<string>();
 
       result.AddRange(base.ToStringArray());
-      ; result.Add(ParseSignature());
+    result.Add(ParseSignature());
 
       return result.ToArray();
     }
 
     private string ParseSignature()
     {
-      string initiative = string.Format(SIGNATURE_INITIATIVE_FORMAT, this.signature.FirstOrDefault(s => s.Contains("Telerik") && s.Contains("Academy")).Trim(new char[] { '-', ' ' }));
-      string link = string.Format(SIGNATURE_LINK_FORMAT, this.signature.FirstOrDefault(s => s.Contains("http")).Trim(new char[] { '-', ' ' }));
-      string course = string.Format(SIGNATURE_COURSE_FORMAT, this.signature.FirstOrDefault(s => !s.Contains("http") && !s.Contains("Telerik")).Trim(new char[] { '-', ' ' }));
+      string initiative = string.Format(SIGNATURE_INITIATIVE_FORMAT, this.signature.FirstOrDefault(s => s.Contains("Telerik") && s.Contains("Academy")));
+      string link = string.Format(SIGNATURE_LINK_FORMAT, this.signature.FirstOrDefault(s => s.Contains("http")));
+      string course = string.Format(SIGNATURE_COURSE_FORMAT, this.signature.FirstOrDefault(s => !s.Contains("http") && !s.Contains("Telerik")));
 
       return string.Format(SIGNATURE_FORMAT, course, initiative, link);
     }

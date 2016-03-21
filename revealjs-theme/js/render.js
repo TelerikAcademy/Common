@@ -3,10 +3,19 @@ var render = (function () {
   function removeHidden(markdown) {
     // var regex = /<!--\s*attr\s*:\s*{.+showInPresentation.+}\s-->\s*(<!--.*-->)/gi;
     var regex = /<!--\s*attr\s*:\s*{.*showInPresentation.*}\s-->\s*(<!--[\s\S]+?-->)/gi;
+	
     markdown = markdown.replace(regex, function (whole, group) {
       var fixed = group.substring('<!--'.length);
       fixed = fixed.substring(0, fixed.length - '-->'.length);
       return whole.replace(group, fixed).trim();
+    });
+	
+	var regexImage = /<!--\s*<img.*((?=showInPresentation)showInPresentation=["']([^"']*))["'].*(?=\/)\/>\s*-->/gi;
+	
+    markdown = markdown.replace(regexImage, function (g1, g2, g3) {
+        if(g3 && g3.toLowerCase() === 'true'){
+            return g1.replace('<!--','').replace('-->','').trim();
+        }
     });
     return markdown;
   }

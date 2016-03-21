@@ -10,7 +10,9 @@
     public const string IMAGE_FULL_FOLDER_PATH = @"{0}\imgs\";
     public const string IMAGE_FULL_NAME = @"{0}pic{1:D2}.png";
     private const string IMAGE_FOLDER_PATH = @"\imgs\";
-    private const string IMAGE_TAG = @"<img class=""slide-image"" src=""{0}"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%; z-index:-1"" />";
+    
+    // Added <!-- --> to prevent images to show in md
+    private const string IMAGE_TAG = @"<!-- <img class=""slide-image"" src=""{0}"" style=""top:{1:F2}%; left:{2:F2}%; width:{3:F2}%; z-index:-1"" /> -->";
 
     public MDShapeImage(Image image, int imageIndex, long top, long left, long width)
       :base(top, left, width)
