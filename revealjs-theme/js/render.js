@@ -112,10 +112,7 @@ var render = (function() {
         // $('#presentation').css('opacity', 1);
         console.log('?!');
         setTimeout(function() {
-          $('#presentation').fadeIn(1000, function() {
-            $('#loading').remove();
-            // $('#slides-container').show();
-          });
+          $('#loading').remove();
         }, 3000);
       },
       error: function(err) {
