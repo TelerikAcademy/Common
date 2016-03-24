@@ -1,21 +1,20 @@
-var render = (function () {
-
+var render = (function() {
   function removeHidden(markdown) {
     // var regex = /<!--\s*attr\s*:\s*{.+showInPresentation.+}\s-->\s*(<!--.*-->)/gi;
     var regex = /<!--\s*attr\s*:\s*{.*showInPresentation.*}\s-->\s*(<!--[\s\S]+?-->)/gi;
-	
-    markdown = markdown.replace(regex, function (whole, group) {
+
+    markdown = markdown.replace(regex, function(whole, group) {
       var fixed = group.substring('<!--'.length);
       fixed = fixed.substring(0, fixed.length - '-->'.length);
       return whole.replace(group, fixed).trim();
     });
-	
-	var regexImage = /<!--\s*<img.*((?=showInPresentation)showInPresentation=["']([^"']*))["'].*(?=\/)\/>\s*-->/gi;
-	
-    markdown = markdown.replace(regexImage, function (g1, g2, g3) {
-        if(g3 && g3.toLowerCase() === 'true'){
-            return g1.replace('<!--','').replace('-->','').trim();
-        }
+
+    var regexImage = /<!--\s*<img.*((?=showInPresentation)showInPresentation=["']([^"']*))["'].*(?=\/)\/>\s*-->/gi;
+
+    markdown = markdown.replace(regexImage, function(g1, g2, g3) {
+      if (g3 && g3.toLowerCase() === 'true') {
+        return g1.replace('<!--', '').replace('-->', '').trim();
+      }
     });
     return markdown;
   }
@@ -24,7 +23,7 @@ var render = (function () {
     var lines = sectionString.split('\n'),
       slides = [],
       slide = '';
-    lines.forEach(function (line) {
+    lines.forEach(function(line) {
       var trimmedLine = line.trim();
       if (trimmedLine.indexOf('# ') === 0 ||
         trimmedLine.indexOf('#\t') === 0 ||
@@ -47,7 +46,7 @@ var render = (function () {
     var sectionsStrings = markdown.trim().split(/<!--[ ]+section start[ ]+-->/g);
     var sections = [];
 
-    sectionsStrings.forEach(function (sectionString) {
+    sectionsStrings.forEach(function(sectionString) {
       var slides = sectionStringToSlides(sectionString);
       sections.push({
         slides: slides
@@ -59,8 +58,8 @@ var render = (function () {
   function fillSections(sections) {
     'use strict';
     var $sectionsContainer = $("<div/>");
-    sections.forEach(function (section, index) {
-      if (!section.slides || !section.slides.length || section.slides.every(function (slide) {
+    sections.forEach(function(section, index) {
+      if (!section.slides || !section.slides.length || section.slides.every(function(slide) {
           return slide.trim() === '';
         })) {
         return;
@@ -70,7 +69,7 @@ var render = (function () {
         .appendTo($sectionsContainer);
 
       var attr = {};
-      section.slides.forEach(function (slide) {
+      section.slides.forEach(function(slide) {
         slide = slide.trim();
         if (slide.indexOf('<!-- attr: ') >= 0) {
           var fromIndex = slide.indexOf('<!-- attr:'),
@@ -101,19 +100,31 @@ var render = (function () {
   }
 
   function render(filename) {
+    // $('#presentation').fadeOut(1);
+
     $.ajax(filename, {
-      success: function (markdown) {
+      success: function(markdown) {
         markdown = removeHidden(markdown);
-        console.log(markdown);
         var sections = parseMarkdown(markdown);
         fillSections(sections);
-        setupRevealJs();
-      },
-      error: function () {
 
+        setupRevealJs();
+        // $('#presentation').css('opacity', 1);
+        console.log('?!');
+        setTimeout(function() {
+          $('#presentation').fadeIn(1000, function() {
+            $('#loading').remove();
+            // $('#slides-container').show();
+          });
+        }, 3000);
+      },
+      error: function(err) {
+        console.log(err);
       }
     });
   }
+
+  $(function() {});
 
   return render;
 }());
