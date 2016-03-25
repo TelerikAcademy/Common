@@ -3,7 +3,7 @@
   color: #218214;
 }
 .reveal {
-  background: #fff;
+  background: #000;
   background-image: url("../../css/imgs/dark-bg.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -21,6 +21,7 @@
 }
 .reveal .slides strong {
   font-weight: normal;
+  color: #6cfc55;
 }
 .reveal .slides blockquote {
   font-weight: normal;
