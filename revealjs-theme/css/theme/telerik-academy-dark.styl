@@ -111,7 +111,7 @@
     .signature
       float right
       position fixed
-      bottom 30px
+      bottom 70px
       text-align left
     .signature-course
       color rgb(115, 153, 0)
@@ -208,3 +208,48 @@
       top 100%
       border-right 15px solid transparent
       border-top 30px solid #f5ffe0
+
+.reveal .controls
+  bottom 50px
+
+.reveal .slide-number
+  bottom 55px
+
+.reveal .social-widget
+    position absolute
+    bottom 0
+    padding-left: 15px;
+    padding-bottom: 18px
+    padding-right: 15px
+    background-color rgba(200, 200, 200, 0.4)
+    opacity: 0.3
+    z-index: 100
+    text-align: center
+
+    &.left
+      left 0
+      border-radius 0 5px 0 0
+
+    &.right
+      right 0
+    border-radius 5px 0 0 0
+
+    &:hover
+      opacity 1
+
+    strong
+      font-size: 0.5em
+      margin-bottom: 5px
+
+    img
+      height: 30px
+      border-radius 5px
+      background-color: white;
+
+      &:first-of-type
+        margin-top: 15px
+
+
+      &:hover
+        opacity 0.5
+        box-shadow: 2px 3px 5px white
