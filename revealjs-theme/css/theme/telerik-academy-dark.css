@@ -301,6 +301,12 @@
   font-size: 0.5em;
   margin-bottom: 5px;
 }
+.reveal .social-widget a {
+  margin-right: 5px;
+}
+.reveal .social-widget a:last-of-type {
+  margin-right: 0;
+}
 .reveal .social-widget img {
   height: 30px;
   border-radius: 5px;

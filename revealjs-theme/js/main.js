@@ -20,10 +20,24 @@ $(function() {
       '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_share.png" /></a>' +
       '</div> ');
 
+  $('#presentation')
+    .append('  <div class="social-widget left mobile">' +
+      '<strong>Follow us</strong>' +
+      '<div class="buttons">' +
+      '  <a href="#"><img title="Our website" src="https://rawgit.com/TelerikAcademy/Common/master/icons/telerik_academy.png" /></a>' +
+      '  <a href="#"><img title="Follow us" src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook.png" /></a>' +
+      '  <a href="#"><img title="Subscribe" src="https://rawgit.com/TelerikAcademy/Common/master/icons/youtube.png" /></a>' +
+      '  <a href="#"><img title="Add us to circles" src="https://rawgit.com/TelerikAcademy/Common/master/icons/google_plus.png" /></a>' +
+      '  <a href="#"><img title="Follow" src="https://rawgit.com/TelerikAcademy/Common/master/icons/linkedin.png" /></a>' +
+      '  <a href="#"><img title="Follow" src="https://rawgit.com/TelerikAcademy/Common/master/icons/twitter.png" /></a>' +
+      '  <a href="#"><img title="Subscribe" src="https://rawgit.com/TelerikAcademy/Common/master/icons/rss.png" /></a>' +
+      '</div>' +
+      '</div>');
+
 
   $('.social-widget.mobile').addClass('hidden');
 
-  $('.social-widget.mobile a').on('click', function(e){
+  $('.social-widget.mobile a').on('click', function(e) {
     e.preventDefault();
     return false;
   });
