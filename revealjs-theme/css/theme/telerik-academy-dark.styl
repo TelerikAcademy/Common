@@ -218,18 +218,20 @@
   width 100%
   height 100%
   background-color rgba(30, 30, 30, 0.9)
-  background-image url(https://cdn.rawgit.com/TelerikAcademy/Common/master/revealjs-theme/css/imgs/logo.png)
-  background-repeat no-repeat
-  background-size 25%
-  background-position 50% 43%
-  background-repeat no-repeat
+  color white
+
+  span
+    font-size: 2em
+    position absolute
+    top 45%
+    left 47%
 
   div
     position absolute
     height 100%
     width 100%
     background-repeat no-repeat
-    background-position 50% 57%
+    background-position 50% 60%
     background-repeat no-repeat
     background-image url(https://cdn.rawgit.com/TelerikAcademy/Common/master/revealjs-theme/css/imgs/gears.gif)
     background-size 8%
@@ -243,13 +245,18 @@
 .reveal .social-widget
     position absolute
     bottom 0
-    padding-left: 15px;
-    padding-bottom: 18px
-    padding-right: 15px
+    padding-left 15px;
+    padding-bottom 18px
+    padding-right 15px
     background-color rgba(200, 200, 200, 0.4)
     opacity: 0.3
     z-index: 100
     text-align: center
+
+    &.mobile
+      width: 100%
+      padding-bottom 5px
+      padding-top 0
 
     &.left
       left 0
@@ -278,3 +285,15 @@
       &:hover
         opacity 0.5
         box-shadow: 2px 3px 5px white
+
+.hidden .buttons
+  display none !important
+
+.reveal .social-widget.mobile
+  display none
+
+@media (max-width: 640px)
+  .reveal .social-widget.desk
+    display none
+  .reveal .social-widget.mobile
+    display block
