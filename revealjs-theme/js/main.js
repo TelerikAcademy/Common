@@ -14,11 +14,11 @@ $(function() {
       '<a href="#"><img title="Subscribe"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/rss.png" /></a>' +
       '</div>');
 
-  $('#presentation')
-    .append('<div class="social-widget right desk">' +
-      '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_like.png" /></a>' +
-      '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_share.png" /></a>' +
-      '</div> ');
+  // $('#presentation')
+  //   .append('<div class="social-widget right desk">' +
+  //     '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_like.png" /></a>' +
+  //     '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_share.png" /></a>' +
+  //     '</div> ');
 
   $('#presentation')
     .append('  <div class="social-widget left mobile">' +
