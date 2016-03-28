@@ -248,21 +248,23 @@
   background-color: rgba(30,30,30,0.9);
   color: #fff;
 }
-#loading span {
-  font-size: 2em;
+#loading .loading-container {
   position: absolute;
-  top: 45%;
-  left: 47%;
+  top: 40%;
 }
-#loading div {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+#loading .text {
+  font-size: 2em;
+  line-height: 7em;
+  text-align: center;
   background-repeat: no-repeat;
-  background-position: 50% 60%;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   background-image: url("https://cdn.rawgit.com/TelerikAcademy/Common/master/revealjs-theme/css/imgs/gears.gif");
-  background-size: 8%;
+  background-size: 10%;
+}
+#loading div {
+  height: 100%;
+  width: 100%;
 }
 .reveal .controls {
   bottom: 50px;

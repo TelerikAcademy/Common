@@ -112,7 +112,7 @@ var render = (function() {
         // $('#presentation').css('opacity', 1);
         console.log('?!');
         setTimeout(function() {
-          $('#loading').remove();
+          // $('#loading').remove();
         }, 3000);
       },
       error: function(err) {
