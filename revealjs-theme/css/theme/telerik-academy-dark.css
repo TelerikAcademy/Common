@@ -329,7 +329,7 @@
 .reveal .social-widget.mobile {
   display: none;
 }
-.reveal .home-btn {
+.home-btn {
   z-index: 100;
   width: 50px;
   position: absolute;
@@ -342,7 +342,7 @@
   background: #464646;
   box-shadow: 0 0 3px #808080;
 }
-.reveal .home-btn img {
+.home-btn img {
   display: block;
   width: 76%;
   padding: 12%;
