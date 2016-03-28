@@ -40,10 +40,10 @@ $(function() {
 
   $('.social-widget.mobile').addClass('hidden');
 
-  $('.social-widget.mobile a').on('click', function(e) {
-    e.preventDefault();
-    return false;
-  });
+  // $('.social-widget.mobile a').on('click', function(e) {
+  //   e.preventDefault();
+  //   return false;
+  // });
 
   $('.social-widget.mobile').on('click', function() {
     $('.social-widget.mobile').toggleClass('hidden');
