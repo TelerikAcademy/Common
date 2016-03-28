@@ -443,7 +443,7 @@
           string textToInsert = text.Text;
           if (isCode && !string.IsNullOrWhiteSpace(textToInsert))
           {
-            textToInsert = string.Format("`{0}`", textToInsert.Trim());
+            textToInsert = string.Format("**{0}**", textToInsert.Trim());
           }
 
           texts.Add(textToInsert);
