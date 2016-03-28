@@ -9,7 +9,7 @@ $(function() {
     ' </div>' +
     '</div>');
 
-  $('#presentation')
+  $('.reveal')
     .append(
       '<div class="social-widget left desk">' +
       ' <strong>Follow us</strong>' +
@@ -23,13 +23,7 @@ $(function() {
       ' <a href="http://feeds.feedburner.com/TelerikAcademy"><img title="Subscribe"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/rss.png" /></a>' +
       '</div>');
 
-  // $('#presentation')
-  //   .append('<div class="social-widget right desk">' +
-  //     '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_like.png" /></a>' +
-  //     '<a href="#"><img class="longer" title="Follow us"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/facebook_share.png" /></a>' +
-  //     '</div> ');
-
-  $('#presentation')
+  $('.reveal')
     .append(
       '<div class="social-widget left mobile">' +
       ' <strong>Follow us</strong>' +
@@ -43,7 +37,6 @@ $(function() {
       '   <a href="http://feeds.feedburner.com/TelerikAcademy"><img title="Subscribe"  src="https://rawgit.com/TelerikAcademy/Common/master/icons/rss.png" /></a>' +
       ' </div>' +
       '</div>');
-
 
   $('.social-widget.mobile').addClass('hidden');
 
