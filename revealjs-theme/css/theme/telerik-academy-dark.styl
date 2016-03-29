@@ -210,29 +210,28 @@
       border-top 30px solid #f5ffe0
 
 #loading
-  display block
-  position absolute
-  top 0
-  left 0
-  z-index 100
-  width 100%
-  height 100%
-  background-color rgba(30, 30, 30, 0.9)
-  color white
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+  background-image: url("https://cdn.rawgit.com/TelerikAcademy/Common/master/revealjs-theme/css/imgs/gears.gif");
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
 
   .loading-container
     position: absolute;
-    top: 40%;
+    top: 32%;
 
   .text
-    font-size: 2em
+    font-size: 1em
     line-height: 7em
     text-align center
-    background-repeat no-repeat
-    background-position 50% 0
-    background-repeat no-repeat
-    background-image url(https://cdn.rawgit.com/TelerikAcademy/Common/master/revealjs-theme/css/imgs/gears.gif)
-    background-size 10%
 
   div
     height 100%
@@ -302,8 +301,8 @@
 
 .home-btn
     z-index: 100;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -325,3 +324,8 @@
     display none
   .reveal .social-widget.mobile
     display block
+  #loading
+    .loading-container
+      top: 35%;
+      .text
+        font-size: 0.8em;

@@ -1,11 +1,12 @@
 $(function() {
-  $(document.body).prepend(
+  $('.reveal').prepend(
     '<div id="loading">' +
     ' <div class="loading-container">' +
-    '   <p class="text">' +
-    '     Loading' +
-    '   </p>' +
-    '   <div></div>' +
+    '   <div>' +
+	'     <p class="text">' +
+    '       Loading' +
+    '     </p>' +
+	'	</div>' +
     ' </div>' +
     '</div>');
 
