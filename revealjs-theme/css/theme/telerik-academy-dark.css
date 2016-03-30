@@ -341,12 +341,16 @@
   overflow: hidden;
   background: #464646;
   box-shadow: 0 0 3px #808080;
+  background-image: url("https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/home-icon.png");
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-repeat: no-repeat;
 }
-.home-btn img {
-  display: block;
-  width: 75%;
-  height: 72%;
-  padding: 14%;
+.home-btn a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
 }
 @media (max-width: 640px) {
   .reveal .social-widget.desk {

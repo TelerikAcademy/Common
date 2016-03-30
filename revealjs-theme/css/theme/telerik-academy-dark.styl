@@ -310,14 +310,18 @@
     border-radius: 50%;
     border: 2px solid #f5f5f5;
     overflow: hidden;
-    background: #464646;
-    box-shadow: 0 0 3px gray;
+    background #464646;
+    box-shadow 0 0 3px gray;
+    background-image url(https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/home-icon.png)
+    background-position 50% 50%
+    background-size 70%
+    background-repeat no-repeat
 
-    img
-        display: block;
-        width: 75%;
-        height: 72%;
-        padding: 14%;
+    a
+      position absolute
+      height 100%
+      width 100%
+      background-color transparent
 
 @media (max-width: 640px)
   .reveal .social-widget.desk
