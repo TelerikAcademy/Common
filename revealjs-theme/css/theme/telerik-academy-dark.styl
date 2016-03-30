@@ -300,28 +300,31 @@
   display none
 
 .home-btn
-    z-index: 100;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding-bottom: 10%;
-    border-radius: 50%;
-    border: 2px solid #f5f5f5;
-    overflow: hidden;
-    background #464646;
-    box-shadow 0 0 3px gray;
-    background-image url(https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/home-icon.png)
-    background-position 50% 50%
-    background-size 70%
-    background-repeat no-repeat
+	z-index: 100;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	padding-bottom: 10%;
+	border-radius: 50%;
+	border: 2px solid #f5f5f5;
+	overflow: hidden;
+	background #464646;
+	box-shadow 0 0 3px gray;
+	background-image url(https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/home-icon.png)
+	background-position 50% 50%
+	background-size 70%
+	background-repeat no-repeat
+		
+	a
+		position absolute
+		height 100%
+		width 100%
+		background-color transparent
 
-    a
-      position absolute
-      height 100%
-      width 100%
-      background-color transparent
+		&:hover
+			background-color #555555
 
 @media (max-width: 640px)
   .reveal .social-widget.desk

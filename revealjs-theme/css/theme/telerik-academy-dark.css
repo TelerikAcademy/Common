@@ -352,6 +352,9 @@
   width: 100%;
   background-color: transparent;
 }
+.home-btn a:hover {
+  background-color: #555;
+}
 @media (max-width: 640px) {
   .reveal .social-widget.desk {
     display: none;
