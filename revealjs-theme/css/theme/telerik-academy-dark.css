@@ -346,14 +346,14 @@
   background-size: 70%;
   background-repeat: no-repeat;
 }
+.home-btn:hover {
+  background-color: #555;
+}
 .home-btn a {
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: transparent;
-}
-.home-btn a:hover {
-  background-color: #555;
 }
 @media (max-width: 640px) {
   .reveal .social-widget.desk {
