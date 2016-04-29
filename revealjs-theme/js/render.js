@@ -16,6 +16,16 @@ var render = (function() {
         return g1.replace('<!--', '').replace('-->', '').trim();
       }
     });
+
+    var regexLinks = /(\[.*\]\(#)(.*)(\))/gi;
+
+    markdown = markdown.replace(regexLinks, function (g1, g2, g3, g4) {
+      if (g3.indexOf('/') < 0) {
+        g3 = '/' + g3;
+      }
+      return g2 + g3 + g4;
+    });
+
     return markdown;
   }
 
