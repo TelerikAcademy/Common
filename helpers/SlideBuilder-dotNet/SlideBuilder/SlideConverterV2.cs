@@ -80,7 +80,7 @@
         AddLocalServerFiles(slidesDir);
         File.WriteAllLines(slidesDir + @"\README.md", mdPresentation.ToStringArray());
 
-        Console.WriteLine("Adde files for presentation:\n{0}\n", filePath.Substring(rootDir.Length));
+        Console.WriteLine("Added files for presentation:\n{0}\n", filePath.Substring(rootDir.Length));
       }
     }
 

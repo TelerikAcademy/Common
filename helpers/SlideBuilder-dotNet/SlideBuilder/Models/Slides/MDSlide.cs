@@ -69,7 +69,10 @@
       }
 
       List<string> result = new List<string>();
-      result.Add(this.BuildAttr(true));
+      
+      // Removed attributes
+      //result.Add(this.BuildAttr(true));
+
       result.AddRange(this.Titles.Select(t => t.ToString()));
       result.AddRange(this.Shapes.Select(t => t.ToString()));
 
@@ -84,8 +87,8 @@
       List<string> attr = new List<string>();
       attr.Add(string.Format("id:'{0}'", id));
       attr.Add(string.Format("class:'{0}'", string.Join(" ", this.CssClass)));
-      attr.Add(string.Format("showInPresentation:'{0}'", showInPresentation));
-      attr.Add(string.Format("hasScriptWrapper:'{0}'", hasScriptWrapper));
+      attr.Add(string.Format("showInPresentation:{0}", showInPresentation.ToString().ToLower()));
+      attr.Add(string.Format("hasScriptWrapper:{0}", hasScriptWrapper.ToString().ToLower()));
       attr.Add(string.Format("style:'{0}'", ""));
 
       return "<!-- attr: { " + string.Join(", ", attr) + " } -->";
