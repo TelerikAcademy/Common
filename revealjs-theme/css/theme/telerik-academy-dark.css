@@ -50,27 +50,26 @@
   color: #ebffd2;
   height: 100%;
   background-image: url("../../css/imgs/logo.png");
-}
-.reveal background-size 300px {
   background-repeat: no-repeat, no-repeat;
+  background-size: 300px;
   text-align: left;
   text-shadow: 3px 3px 10px #000;
 }
-.reveal background-size 300px li li {
+.reveal .slides section li li {
   font-size: 0.9em;
 }
-.reveal background-size 300px code {
+.reveal .slides section code {
   color: #daedf2;
   text-shadow: 3px 3px 3px #000;
 }
-.reveal background-size 300px pre code {
+.reveal .slides section pre code {
   text-shadow: none;
 }
-.reveal background-size 300px section {
+.reveal .slides section section {
   background-image: url("../../css/imgs/bg-dark.png");
 }
-.reveal background-size 300px h1,
-.reveal background-size 300px h2 {
+.reveal .slides section h1,
+.reveal .slides section h2 {
   color: #cf3;
   text-shadow: 3px 3px 5px #000;
   width: 85%;
@@ -78,89 +77,89 @@
   text-transform: none;
   text-align: right;
 }
-.reveal background-size 300px h1 {
+.reveal .slides section h1 {
   font-size: 1.3em;
   margin-bottom: 5px;
 }
-.reveal background-size 300px h2 {
+.reveal .slides section h2 {
   color: #faf7c8;
   font-size: 1.3em;
   margin-top: 10px;
 }
-.reveal .table-of-contents a {
+.reveal .slides .table-of-contents a {
   color: #ebffd2;
   text-decoration: none;
 }
-.reveal .slide-title {
+.reveal .slides .slide-title {
   background-position: top left, bottom right;
   background-repeat: no-repeat, no-repeat;
 }
-.reveal .slide-title h1 {
+.reveal .slides .slide-title h1 {
   width: 100%;
   margin-top: 100px;
   margin-left: 0;
   font-size: 1.4em;
 }
-.reveal .slide-title h2 {
+.reveal .slides .slide-title h2 {
   margin-top: 25px;
   margin-left: 20px;
   font-size: 1.1em;
   width: 100%;
 }
-.reveal .slide-section {
+.reveal .slides .slide-section {
   text-align: center;
 }
-.reveal .slide-section h1,
-.reveal .slide-section h2 {
+.reveal .slides .slide-section h1,
+.reveal .slides .slide-section h2 {
   width: 100%;
   text-align: center;
   margin-left: 0;
 }
-.reveal .slide-section h1 {
+.reveal .slides .slide-section h1 {
   margin-top: 20%;
   font-size: 1.7em;
 }
-.reveal .slide-section h2 {
+.reveal .slides .slide-section h2 {
   margin-top: 25px;
   font-size: 1.1em;
 }
-.reveal.slide-questions {
+.reveal .slides.slide-questions {
   font-size: 1em;
 }
-.reveal .slide-questions h1 {
+.reveal .slides .slide-questions h1 {
   text-align: right;
 }
-.reveal .slide-questions h2 {
+.reveal .slides .slide-questions h2 {
   margin-top: 15%;
   text-align: center;
   font-size: 1.9em;
 }
-.reveal .signature {
+.reveal .slides .signature {
   float: right;
   position: fixed;
   bottom: 70px;
   text-align: left;
 }
-.reveal .signature-course {
+.reveal .slides .signature-course {
   color: #739900;
   font-size: 1.05em;
   font-weight: bold;
   line-height: 21px;
 }
-.reveal .signature-initiative {
+.reveal .slides .signature-initiative {
   color: #f5ffd6;
   font-size: 0.9em;
   line-height: 25px;
   padding-top: 10px;
   margin-bottom: 0;
 }
-.reveal .signature-link {
+.reveal .slides .signature-link {
   color: #739900;
   font-size: 0.85em;
   text-decoration: underline;
   line-height: 10px;
 }
-.reveal .balloon {
+.reveal .slides .balloon {
   display: inline-block;
   position: absolute;
   padding: 5px 15px;
@@ -169,13 +168,13 @@
   border-radius: 15px;
   background: #9f8471;
 }
-.reveal .slide-image {
+.reveal .slides .slide-image {
   border: none;
   background: none;
   position: absolute;
   box-shadow: none;
 }
-.reveal .bubble {
+.reveal .slides .bubble {
   display: inline-block;
   position: absolute;
   padding: 5px 15px;
@@ -189,50 +188,51 @@
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.reveal .bubble-left:before .bubble-right:before,
-.reveal .bubble-left:before .bubble-up:before,
-.reveal .bubble-left:before .bubble-up-left:before,
-.reveal .bubble-left:before .bubble-up-right:before,
-.reveal .bubble-left:before .bubble-down: before,
-.reveal .bubble-left:before .bubble-down-left:before,
-.reveal .bubble-left:before .bubble-down-right:before {
+.reveal .slides .bubble-left:before,
+.reveal .slides .bubble-right:before,
+.reveal .slides .bubble-up:before,
+.reveal .slides .bubble-up-left:before,
+.reveal .slides .bubble-up-right:before,
+.reveal .slides .bubble-down: before,
+.reveal .slides .bubble-down-left:before,
+.reveal .slides .bubble-down-right:before {
   content: "";
   position: absolute;
   width: 0;
   height: 0;
 }
-.reveal .bubble-left:before .bubble-left:before {
+.reveal .slides .bubble-left:before {
   right: 100%;
   border-top: 15px solid transparent;
   border-right: 30px solid #f5ffe0;
 }
-.reveal .bubble-left:before .bubble-right:before {
+.reveal .slides .bubble-right:before {
   left: 100%;
   top: 50%;
   border-bottom: 15px solid transparent;
   border-left: 30px solid #f5ffe0;
 }
-.reveal .bubble-left:before .bubble-up:before,
-.reveal .bubble-left:before .bubble-up-right:before {
+.reveal .slides .bubble-up:before,
+.reveal .slides .bubble-up-right:before {
   left: 95%;
   bottom: 100%;
   border-right: 15px solid transparent;
   border-bottom: 30px solid #f5ffe0;
 }
-.reveal .bubble-left:before .bubble-up-left:before {
+.reveal .slides .bubble-up-left:before {
   right: 96%;
   bottom: 100%;
   border-left: 15px solid transparent;
   border-bottom: 30px solid #f5ffe0;
 }
-.reveal .bubble-left:before .bubble-down:before,
-.reveal .bubble-left:before .bubble-down-left:before {
+.reveal .slides .bubble-down:before,
+.reveal .slides .bubble-down-left:before {
   right: 95%;
   top: 100%;
   border-left: 15px solid transparent;
   border-top: 30px solid #f5ffe0;
 }
-.reveal .bubble-left:before .bubble-down-right:before {
+.reveal .slides .bubble-down-right:before {
   left: 96%;
   top: 100%;
   border-right: 15px solid transparent;
