@@ -70,8 +70,8 @@
 
       List<string> result = new List<string>();
       
-      // Removed attributes
-      //result.Add(this.BuildAttr(true));
+      // Add or Remove attributes
+      result.Add(this.BuildAttr(true));
 
       result.AddRange(this.Titles.Select(t => t.ToString()));
       result.AddRange(this.Shapes.Select(t => t.ToString()));
