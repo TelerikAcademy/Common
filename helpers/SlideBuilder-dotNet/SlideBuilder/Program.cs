@@ -5,10 +5,10 @@
     static void Main()
     {
       SlideConverterV2.ExtractPPTXtoMD(
-          @"C:\Users\mvesheff\Desktop\TEST", // Source folder
-          "CSharp-Fundamentals", // GitHub repo name
+          @"D:\TelerikRepos\High-Quality-Code-Part-1\00. Course-Intro", // Source folder
+          "High-Quality-Code-Part-1", // GitHub repo name
           "cs", // Code language 
-          @"C:\Users\mvesheff\Desktop\TEST"); // destination folder
+          @"D:\TelerikRepos\High-Quality-Code-Part-1\00. Course-Intro"); // destination folder
     }
   }
 }
