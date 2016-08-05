@@ -87,7 +87,7 @@
                 }
 
                 // add all files
-                AddTableOfContentsREADME(lectureDir);
+                //AddTableOfContentsREADME(lectureDir);
                 AddLocalServerFiles(slidesDir);
                 File.WriteAllLines(slidesDir + @"\README.md", mdPresentation.ToStringArray());
 
