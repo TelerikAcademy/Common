@@ -1,10 +1,11 @@
 ﻿namespace SlideBuilder.Models.Shapes
 {
+  using System;
   using System.Text;
 
   public class MDShapeText : IMDShape
   {
-    private const string TEXT_FORMAT = "{0}- {1}";
+    protected const string TEXT_FORMAT = "{0}- {1}";
     protected const string COMMENT_FORMAT = "<!-- {0} -->";
 
     public MDShapeText()
@@ -37,6 +38,11 @@
     public string GetIndent()
     {
       return new string(' ', this.IndentCount * 2);
+    }
+
+    public string GetLine()
+    {
+      return this.Line.ToString();
     }
   }
 }

@@ -16,8 +16,13 @@
 
     public ICollection<MDSection> Sections { get; internal set; }
 
-    public void AddSlide(MDSlide slide)
+    public void AddSlide(IMDSlide slide)
     {
+      if (this.Sections.Count == 0)
+      {
+        this.StartNewSection(true);
+      }
+
       this.Sections.Last().AddSlide(slide);
     }
 

@@ -17,5 +17,10 @@
     {
       return string.Format(BALLOON_TAG, this.Line.ToString(), this.Top, this.Left, this.Width);
     }
+
+    public string GetLine()
+    {
+      return this.Line;
+    }
   }
 }

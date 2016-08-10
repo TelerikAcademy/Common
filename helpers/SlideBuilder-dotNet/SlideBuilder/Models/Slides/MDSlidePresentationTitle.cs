@@ -6,7 +6,7 @@
 
     public class MDSlidePresentationTitle : MDSlide, IMDSlide
     {
-        public const string SIGNATURE_FORMAT = "<div class=\"signature\">\n\t{0}\t{1}\t{2}</div>";
+        public const string SIGNATURE_FORMAT = "<article class=\"signature\">\n\t{0}\t{1}\t{2}</div>";
         public const string SIGNATURE_COURSE_FORMAT = "<p class=\"signature-course\">{0}</p>\n";
         public const string SIGNATURE_INITIATIVE_FORMAT = "<p class=\"signature-initiative\">{0}</p>\n";
         public const string SIGNATURE_LINK_FORMAT = "<a href=\"{0}\" class=\"signature-link\">{0}</a>\n";
@@ -40,7 +40,7 @@
             }
             else
             {
-                this.signature.Add(mdShape.ToString());
+                this.signature.Add(mdShape.GetLine());
             }
         }
 
@@ -54,7 +54,7 @@
 
         public override string[] ToStringArray()
         {
-            if (this.Shapes.Count <= 0 || this.Titles.Count <= 0)
+            if (this.Titles.Count <= 0)
             {
                 return new string[0];
             }

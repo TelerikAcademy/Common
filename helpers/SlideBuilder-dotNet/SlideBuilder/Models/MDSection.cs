@@ -8,10 +8,10 @@
     {
         public MDSection()
         {
-            this.Slides = new List<MDSlide>();
+            this.Slides = new List<IMDSlide>();
         }
 
-        public IList<MDSlide> Slides { get; internal set; }
+        public IList<IMDSlide> Slides { get; internal set; }
 
         public string[] ToStringArray()
         {
@@ -26,7 +26,7 @@
             return stringList.ToArray();
         }
 
-        internal void AddSlide(MDSlide slide)
+        internal void AddSlide(IMDSlide slide)
         {
             this.Slides.Add(slide);
         }

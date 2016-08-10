@@ -3,5 +3,6 @@
   public interface IMDShape
   {
     void AddLine(string line, int indent);
+    string GetLine();
   }
 }

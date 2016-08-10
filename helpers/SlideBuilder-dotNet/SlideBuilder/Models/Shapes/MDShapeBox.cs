@@ -24,5 +24,10 @@ namespace SlideBuilder.Models.Shapes
     {
       throw new NotImplementedException();
     }
+
+    public string GetLine()
+    {
+      return null;
+    }
   }
 }

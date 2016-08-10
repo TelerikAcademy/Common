@@ -26,7 +26,7 @@
 
     public void AddLine(string line, int indent)
     {
-      var shapeText =  new MDShapeText();
+      var shapeText = new MDShapeText();
       shapeText.AddLine(line, indent);
 
       this.Lines.Add(shapeText);
@@ -45,6 +45,17 @@
       result.AppendLine(CODE_END_FORMAT);
 
       return result.ToString();
+    }
+
+    public string GetLine()
+    {
+      var lines = new StringBuilder();
+      foreach (var line in this.Lines)
+      {
+        lines.Append(line.GetLine());
+      }
+
+      return lines.ToString();
     }
   }
 }
