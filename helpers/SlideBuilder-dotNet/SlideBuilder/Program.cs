@@ -5,10 +5,10 @@
     static void Main()
     {
       SlideConverterV2.ExtractPPTXtoMD(
-          @"D:\TelerikRepos\High-Quality-Code-Part-2\01. Defensive-Programming-and-Exceptions", // Source folder
-          "High-Quality Code - Part 2", // GitHub repo name
+          @"D:\TelerikRepos\Unit-Testing\Topics\03. Mocking and JustMock", // Source folder
+          "Unit Testing", // GitHub repo name
           "cs", // Code language 
-          @"D:\TelerikRepos\High-Quality-Code-Part-2\01. Defensive-Programming-and-Exceptions"); // destination folder
+          @"D:\TelerikRepos\Unit-Testing\Topics\03. Mocking and JustMock"); // destination folder
 
       //SlideConverterV2.ExtractWebPageToMD(
       //    @"https://www.typescriptlang.org/docs/handbook/", // Source folder
